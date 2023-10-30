@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <div class="container flex">
+            <div class="board to-do flex">
+                <div class="header flex">
+                    <h1>To do</h1>
+                    <span class="count" id="todo-count">1</span>
+                </div>
+                <div class="cards flex">
+                    <div class="start flex">
+                        <div class="done">
+                            <button class="done-btn btn"><img src="./img/agree-3.png" alt="" height="23px" width="23px"></button>
+                        </div>
+                        <div class="details flex">
+                            <h1>To do</h1>
+                            <p>this is a todo card</p>
+                            <button class="priority">high</button>
+                        </div>
+                    </div>
+                    <div class="actions flex">
+                        <button class="cancel-btn btn"><img src="./img/cancel3.png" alt="" height="20px" width="20px"></button>
+                        <button class="write-btn btn"><img src="./img/edit-regular-24.png" alt="" height="22px" width="22px">
+                        </button>
+                    </div>
+                </div>
+                <button class="add-btn flex">
+                    <span>+</span>
+                    <p>Add card</p>
+                </button>
+            </div>
+            <div class="board in-progress flex">
+                <div class="header flex">
+                    <h1>In progress</h1>
+                    <span class="count" id="todo-count">1</span>
+                </div>
+                <div class="cards flex">
+                    <div class="start flex">
+                        <div class="done">
+                            <button class="done-btn btn"><img src="./img/agree-3.png" alt="" height="23px" width="23px"></button>
+                        </div>
+                        <div class="details flex">
+                            <h1>To do</h1>
+                            <p>this is a todo card</p>
+                            <button class="priority">high</button>
+                        </div>
+                    </div>
+                    <div class="actions flex">
+                        <button class="cancel-btn btn"><img src="./img/cancel3.png" alt="" height="20px" width="20px"></button>
+                        <button class="write-btn btn"><img src="./img/edit-regular-24.png" alt="" height="22px" width="22px">
+                        </button>
+                    </div>
+                </div>
+                <button class="add-btn flex">
+                    <span>+</span>
+                    <p>Add card</p>
+                </button>
+            </div>
+            <div class="board stuck flex">
+                <div class="header flex">
+                    <h1>To do</h1>
+                    <span class="count" id="todo-count">0</span>
+                </div>
+                <div class="cards flex">
+                    <div class="start flex">
+                        <div class="done">
+                            <button class="done-btn btn"><img src="./img/agree-3.png" alt="" height="23px" width="23px"></button>
+                        </div>
+                        <div class="details flex">
+                            <h1>Stuck</h1>
+                            <p>this is a todo card</p>
+                            <button class="priority">high</button>
+                        </div>
+                    </div>
+                    <div class="actions flex">
+                        <button class="cancel-btn btn"><img src="./img/cancel3.png" alt="" height="20px" width="20px"></button>
+                        <button class="write-btn btn"><img src="./img/edit-regular-24.png" alt="" height="22px" width="22px">
+                        </button>
+                    </div>
+                </div>
+                <button class="add-btn flex">
+                    <span>+</span>
+                    <p>Add card</p>
+                </button>
+            </div>
+            <div class="board done flex">
+                <div class="header flex">
+                    <h1>Done</h1>
+                    <span class="count" id="todo-count">0</span>
+                </div>
+                <div class="cards flex">
+                    <div class="start flex">
+                        <div class="done">
+                            <button class="done-btn btn"><img src="./img/agree-3.png" alt="" height="23px" width="23px"></button>
+                        </div>
+                        <div class="details flex">
+                            <h1>To do</h1>
+                            <p>this is a todo card</p>
+                            <button class="priority">high</button>
+                        </div>
+                    </div>
+                    <div class="actions flex">
+                        <button class="cancel-btn btn"><img src="./img/cancel3.png" alt="" height="20px" width="20px"></button>
+                        <button class="write-btn btn"><img src="./img/bx-edit.svg" alt="" height="22px" width="22px">
+                        </button>
+                    </div>
+                </div>
+                <button class="add-btn flex">
+                    <span>+</span>
+                    <p>Add card</p>
+                </button>
+            </div>
+        </div>
+    </section>
+    <div class="add-task flex radius">
+        <h1>Add Task</h1>
+        <div class="title">
+            <p>Title</p>
+            <input class="input-title" type="text">
+        </div>
+        <div class="description">
+            <p>Description</p>
+            <input class="input-description" type="text">
+        </div>
+        <div class="status">
+            <p>Status</p>
+            <form action="">
+                <select name="status" id="drop-down">
+                    <option value="to-do">To do</option>
+                    <option value="in-progress">In progress</option>
+                    <option value="stuck">Stuck</option>
+                    <option value="done">Done</option>
+                </select>
+            </form>
+        </div>
+        <div class="priorities">
+            <p>Priority</p>
+            <form action="">
+                <select name="priority" id="drop-down">
+                    <option value="">Low</option>
+                    <option value="">Medium</option>
+                    <option value="">High</option>
+                </select>
+            </form>
+        </div>
+        <button class="task radius">Add Task</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
