@@ -13,10 +13,13 @@ body {
     justify-content: center;
     align-items: center;
     width: 1288px;
-    height: 180px;
+    height: 200px;
     margin: auto;
     gap: 20px;
     padding-top: 100px;
+    position: relative;
+    opacity: 1;
+    pointer-events: none;
 }
 .board {
     height: 100%;
@@ -95,7 +98,12 @@ body {
     font-family: "Roboto", sans-serif;
     padding: 10px;
     border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    z-index: 101;
     opacity: 0;
+    pointer-events: auto;
 }
 .input-title {
     width: 375px;
