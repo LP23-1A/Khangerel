@@ -16,9 +16,19 @@ function closeModel() {
 close.onclick = closeModel;
 closeback.onclick = closeModel;
 
-let card = document.querySelector('.card');
+let cancel = document.querySelectorAll('.cancel-btn');
+function deleteUp (){
+    cancel.onclick = deleteUp;
+}
+
+
+let card = document.querySelectorAll('.card');
 let task = document.querySelector('.task');
 function move() {
     card.style.display = "block";
 }
-task.onclick = move
+task.onclick = move;
+for(let i = 0; i < card.length; i++){
+    console.log(onclick);
+    task.onclick = move;
+}
