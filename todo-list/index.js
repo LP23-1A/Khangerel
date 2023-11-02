@@ -36,44 +36,44 @@ for(let i = 0; i < task.length; i++){
 };
 
 
-const data = [];
+// const data = [];
 
-function render (data) {
-    const cards = document.getElementsByClassName(".write-task")[0];
-    const done = []
-    cards.innerHTML = ""
-    for (let i = 0; i < data.length; i++){
-        cards.innerHTML += createCard(data[i]);
-    }
-}
-let inputtitle = document.querySelector('.input.title');
-let inputdesc = document.querySelector('.input-description');
-let status = document.getElementById("status");
-let priority = document.getElementById("priority")
-function addCard(){
-    const mockData = {
-        title: '',
-        desc: '',
-        status: '',
-        priority: '',
-    }
-    mockData.title = inputtitle.value;
-    mockData.desc = inputdesc.value;
-    mockData.status = status.value;
-    mockData.priority  = priority.value;
-    data.push(mockData);
-    render(data)
-}
-function createCard(carding) {
-    const { title, desc, priority } = carding;
-    return ` <div class="card">
-    <button class="done">v</button>
-    <div class="info">
-    <p>${title}</p>
-    <span>${desc}</span>
-    <div class="priority">${priority}</div>
-    </div>
-    <button class="close">x</button>
-    </div>`;
-    }
-    render(data)
+// function render (data) {
+//     const cards = document.getElementsByClassName(".write-task")[0];
+//     const done = []
+//     cards.innerHTML = ""
+//     for (let i = 0; i < data.length; i++){
+//         cards.innerHTML += createCard(data[i]);
+//     }
+// }
+// let inputtitle = document.querySelector('.input.title');
+// let inputdesc = document.querySelector('.input-description');
+// let status = document.getElementById("status");
+// let priority = document.getElementById("priority")
+// function addCard(){
+//     const mockData = {
+//         title: '',
+//         desc: '',
+//         status: '',
+//         priority: '',
+//     }
+//     mockData.title = inputtitle.value;
+//     mockData.desc = inputdesc.value;
+//     mockData.status = status.value;
+//     mockData.priority  = priority.value;
+//     data.push(mockData);
+//     render(data)
+// }
+// function createCard(carding) {
+//     const { title, desc, priority } = carding;
+//     return ` <div class="card">
+//     <button class="done">v</button>
+//     <div class="info">
+//     <p>${title}</p>
+//     <span>${desc}</span>
+//     <div class="priority">${priority}</div>
+//     </div>
+//     <button class="close">x</button>
+//     </div>`;
+//     }
+//     render(data)
