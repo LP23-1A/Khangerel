@@ -14,7 +14,7 @@ body {
   width: 1288px;
   height: 400px;
   margin: auto;
-  gap: 20px;
+  gap: 25px;
   padding-top: 120px;
   position: relative;
   line-height: normal;
@@ -29,7 +29,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   border-radius: 7px;
-  gap: 23px;
+  gap: 20px;
 }
 .card-items {
   justify-content: space-between;
@@ -41,14 +41,15 @@ body {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.5);
 }
-.card {
+.cardcontainer {
   background-color: white;
   width: 300px;
-  height: 100%;
+  height: fit-content;
   padding: 4px;
   border-radius: 5px;
   justify-content: space-between;
-  display: none;
+  flex-direction: column;
+  gap: 10px;
 }
 .done-btn {
   padding-top: 5px;
@@ -57,7 +58,7 @@ body {
   gap: 10px;
 }
 .btn {
-  border: none;
+  border: 1px solid;
   background-color: white;
   border-radius: 50%;
   height: 22px;
@@ -94,8 +95,9 @@ body {
   border-radius: 8px;
   border: solid;
   width: 50px;
+  text-align: center;
 }
-/* Add task */
+/* Modal */
 .closing {
     display: fixed;
     background-color: rgb(67, 67, 67) !important;
@@ -124,9 +126,9 @@ body {
   width: 375px;
   height: 25px;
 }
-.input-description {
+#desc {
+  height: 120px;
   width: 375px;
-  height: 100px;
 }
 .radius {
   border-radius: 8px;

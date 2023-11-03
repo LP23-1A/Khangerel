@@ -111,38 +111,7 @@
     </div>
  </div>
  <script>
- const data = [
- {
- title: 'todo',
- desc: 'this is a todo card',
- status: 'done',
- priority: 'High',
- },
- {
- title: 'todo',
- desc: 'this is a todo card',
- status: 'todo',
- priority: 'low',
- },
- {
- title: 'test',
- desc: 'this is a todo card',
- status: 'stuck',
- priority: 'medium',
- },
- {
- title: 'in progress',
- desc: 'this is a todo card',
- status: 'in progcess',
- priority: 'High',
- },
- {
- title: 'test-now',
- desc: 'this is a todo card',
- status: 'done',
- priority: 'High',
- },
- ];
+ const data = [];
  function render(data) {
  const cards = document.getElementsByClassName("cards")[0];
  const done = []
@@ -165,7 +134,7 @@
  data.push(mockData);
  render(data)
  }
- function createCard(card) {
+ function createCard(card){
  const { title, desc, priority } = card;
  return ` <div class="card">
  <button class="done">v</button>
@@ -176,7 +145,7 @@
  </div>
  <button class="close">x</button>
  </div>`;
- }
+ } 
  render(data)
  </script>
  </body>

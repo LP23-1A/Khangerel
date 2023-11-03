@@ -1,13 +1,12 @@
-let addCard = document.querySelectorAll(".add-btn");
+let addCards = document.querySelectorAll(".add-btn");
 let addTask = document.querySelector(".modal");
 let editbtn = document.querySelectorAll('.write-btn');
 
 function openModal() {
     addTask.style.opacity = 1;
 }
-for (let i = 0; i < addCard.length; i++){
-    addCard[i].onclick = openModal;
-    editbtn[0].onclick = openModal;
+for (let i = 0; i < addCards.length; i++){
+    addCards[i].onclick = openModal;
 };
 
 let close = document.querySelector('.close-btn');
@@ -26,54 +25,53 @@ for(let i = 0; i < cancel.length; i++){
 }
 
 
-let card = document.querySelector('.card');
-let task = document.querySelectorAll('.task');
-function move() {
-    card.style.display = "block";
+
+const data = [];
+function render(data){
+    const cards = document.getElementsByClassName("cardcontainer")[0];
+    const done = []
+    cards.innerHTML = ""
+    for (let i = 0; i < data.length; i++) {
+        cards.innerHTML += createCard(data[i]);
+    }
 }
-for(let i = 0; i < task.length; i++){
-    task[i].onclick = move;
-};
-
-
-// const data = [];
-
-// function render (data) {
-//     const cards = document.getElementsByClassName(".write-task")[0];
-//     const done = []
-//     cards.innerHTML = ""
-//     for (let i = 0; i < data.length; i++){
-//         cards.innerHTML += createCard(data[i]);
-//     }
-// }
-// let inputtitle = document.querySelector('.input.title');
-// let inputdesc = document.querySelector('.input-description');
-// let status = document.getElementById("status");
-// let priority = document.getElementById("priority")
-// function addCard(){
-//     const mockData = {
-//         title: '',
-//         desc: '',
-//         status: '',
-//         priority: '',
-//     }
-//     mockData.title = inputtitle.value;
-//     mockData.desc = inputdesc.value;
-//     mockData.status = status.value;
-//     mockData.priority  = priority.value;
-//     data.push(mockData);
-//     render(data)
-// }
-// function createCard(carding) {
-//     const { title, desc, priority } = carding;
-//     return ` <div class="card">
-//     <button class="done">v</button>
-//     <div class="info">
-//     <p>${title}</p>
-//     <span>${desc}</span>
-//     <div class="priority">${priority}</div>
-//     </div>
-//     <button class="close">x</button>
-//     </div>`;
-//     }
-//     render(data)
+function addCard() {
+    const mockData = {
+        title: '',
+        desc: '',
+        status: '',
+        priority: '',
+        }
+        let input = document.querySelector("input")
+        let textarea = document.querySelector("textarea")
+        let status = document.getElementById("status");
+        let priority = document.getElementById("priority");
+        mockData.title = input.value
+        mockData.desc = textarea.value
+        mockData.status = status.value
+        mockData.priority = priority.value
+        console.log(mockData);
+        data.push(mockData);
+        render(data)
+}
+function createCard(card){
+    const { title, desc, priority } = card;
+    return `
+<div class="card-items flex">
+    <div class="start flex">
+        <div class="done">
+            <button class="done-btn btn"><img src="./img/correct.png" alt="" height="15px" width="15px"></button>
+         </div>
+         <div class="write-task">
+            <h1>${title}</h1>
+            <p>${desc}</p>
+            <div class="priority">${priority}</div>
+        </div>
+    </div>
+    <div class="end flex">
+        <button class="cancel-btn btn">X</button>
+        <button class="write-btn btn"><img src="./img/write.png" alt="" height="20px" width="20px">
+    </button>
+</div>`
+}
+render(data)

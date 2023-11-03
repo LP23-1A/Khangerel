@@ -14,23 +14,12 @@
                     <h1>To do</h1>
                     <div id="todo-num">0</div>
                 </div>
-                <div class="card flex">
+                <div class="cardcontainer flex">
                     <div class="card-items flex">
-                        <div class="start flex">
-                            <div class="done">
-                                <button class="done-btn btn"><img src="./img/correct.png" alt="" height="15px" width="15px"></button>
-                            </div>
-                            <div class="write-task flex">
-                                <h1>To do</h1>
-                                <p>This is a todo card</p>
-                                <button class="priority">high</button>
-                            </div>
-                        </div>
-                        <div class="end flex">
-                            <button class="cancel-btn btn">X</button>
-                            <button class="write-btn btn"><img src="./img/write.png" alt="" height="20px" width="20px">
-                            </button>
-                        </div>
+                       <div class="start flex">
+                            <div class="write-task"></div>
+                       </div> 
+                       <div class="end flex"></div>
                     </div>
                 </div>
                 <button class="add-btn flex">
@@ -40,26 +29,15 @@
             </div>
             <div class="cards in-progress flex">
                 <div class="header flex">
-                    <h1>In progress</h1>
+                    <h1>In-progress</h1>
                     <div id="todo-num">0</div>
                 </div>
-                <div class="card flex">
+                <div class="cardcontainer flex">
                     <div class="card-items flex">
-                        <div class="start flex">
-                            <div class="done">
-                                <button class="done-btn btn"><img src="./img/correct.png" alt="" height="15px" width="15px"></button>
-                            </div>
-                            <div class="write-task flex">
-                                <h1>To do</h1>
-                                <p>This is a todo card</p>
-                                <button class="priority">high</button>
-                            </div>
-                        </div>
-                        <div class="end flex">
-                            <button class="cancel-btn btn">X</button>
-                            <button class="write-btn btn"><img src="./img/write.png" alt="" height="20px" width="22px">
-                            </button>
-                        </div>
+                       <div class="start flex">
+                            <div class="write-task"></div>
+                       </div> 
+                       <div class="end flex"></div>
                     </div>
                 </div>
                 <button class="add-btn flex">
@@ -72,23 +50,12 @@
                     <h1>Stuck</h1>
                     <div id="todo-num">0</div>
                 </div>
-                <div class="card flex">
+                <div class="cardcontainer flex">
                     <div class="card-items flex">
-                        <div class="start flex">
-                            <div class="done">
-                                <button class="done-btn btn"><img src="./img/correct.png" alt="" height="15px" width="15px"></button>
-                            </div>
-                            <div class="write-task flex">
-                                <h1>Stuck</h1>
-                                <p>This is a todo card</p>
-                                <button class="priority">high</button>
-                            </div>
-                        </div>
-                        <div class="end flex">
-                            <button class="cancel-btn btn">X</button>
-                            <button class="write-btn btn"><img src="./img/write.png" alt="" height="22px" width="20px">
-                            </button>
-                        </div>
+                       <div class="start flex">
+                            <div class="write-task"></div>
+                       </div> 
+                       <div class="end flex"></div>
                     </div>
                 </div>
                 <button class="add-btn flex">
@@ -101,26 +68,15 @@
                     <h1>Done</h1>
                     <div id="todo-num">0</div>
                 </div>
-                <div class="card flex">
+                <div class="cardcontainer flex">
                     <div class="card-items flex">
-                        <div class="start flex">
-                            <div class="done">
-                                <button class="done-btn btn"><img src="./img/correct.png" alt="" height="15px" width="15px"></button>
-                            </div>
-                            <div class="write-task flex">
-                                <h1>To do</h1>
-                                <p>This is a todo card</p>
-                                <button class="priority">high</button>
-                            </div>
-                        </div>
-                        <div class="end flex">
-                            <button class="cancel-btn btn">X</button>
-                            <button class="write-btn btn"><img src="./img/write.png" alt="" height="20px" width="20px">
-                            </button>
-                        </div>
+                       <div class="start flex">
+                            <div class="write-task"></div>
+                       </div> 
+                       <div class="end flex"></div>
                     </div>
                 </div>
-                <button class="add-btn flex" onclick="buttonAdd">
+                <button class="add-btn flex">
                     <p>+</p>
                     <p>Add card</p>
                 </button>
@@ -140,32 +96,29 @@
             </div>
             <div class="description">
                 <p>Description</p>
-                <input class="input-description" type="text">
+                <textarea name="" id="desc" cols="30" rows="10"></textarea>
             </div>
             <div class="status">
                 <p>Status</p>
-                <form action="">
                     <select name="status" id="status">
                         <option value="to-do">To do</option>
                         <option value="in-progress">In progress</option>
                         <option value="stuck">Stuck</option>
                         <option value="done">Done</option>
                     </select>
-                </form>
             </div>
             <div class="priorities">
                 <p>Priority</p>
-                <form action="">
                     <select name="priority" id="priority">
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                     </select>
-                </form>
             </div>
-            <button class="task radius">Add Task</button>
+            <button class="task radius" onclick="addCard()">Add Task</button>
         </div>
     </div>
     <script src="./index.js"></script>
 </body>
 </html>
+
