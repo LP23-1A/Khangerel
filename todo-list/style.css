@@ -19,6 +19,16 @@ body {
   position: relative;
   line-height: normal;
 }
+.cardcontainer {
+  background-color: transparent;
+  width: 300px;
+  height: fit-content;
+  padding: 4px;
+  border-radius: 5px;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
 .cards {
   height: fit-content;
   width: 310px;
@@ -29,10 +39,13 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   border-radius: 7px;
-  gap: 20px;
+  gap: 18px;
 }
 .card-items {
   justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 7px;
 }
 .header {
   gap: 10px;
@@ -40,16 +53,6 @@ body {
 #todo-num {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.5);
-}
-.cardcontainer {
-  background-color: white;
-  width: 300px;
-  height: fit-content;
-  padding: 4px;
-  border-radius: 5px;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 10px;
 }
 .done-btn {
   padding-top: 5px;
