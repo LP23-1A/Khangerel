@@ -1,7 +1,6 @@
 let addCards = document.querySelectorAll(".add-btn");
 let addTask = document.querySelector(".modal");
 let editbtn = document.querySelectorAll('.write-btn');
-const [datas,setDatas]=useState("")
 
 function openModal() {
     addTask.style.opacity = 1;
@@ -30,6 +29,8 @@ for(let i = 0; i < cancel.length; i++){
 const data = [];
 function render(){
     const cards = document.getElementsByClassName("cardcontainer");
+    // let todonum = document.querySelectorAll("#todo-num")
+    // todonum === render(i)
     for (let i = 0; i < data.length; i++) {
         if (data[i].status === "todo"){
             cards[0].innerHTML = "";
@@ -46,6 +47,7 @@ function render(){
         }
     }
 }
+console.log(data);
 function addCard() {
     const mockData = {
         title: '',
@@ -61,7 +63,7 @@ function addCard() {
         mockData.desc = textarea.value
         mockData.status = status.value
         mockData.priority = priority.value
-        data.push(...mockData);
+        data.push(mockData);
         render(data)
 }
 function createCard(card){
@@ -82,12 +84,47 @@ function createCard(card){
             <button class="cancel-btn btn">X</button>
             <button class="write-btn btn"><img src="./img/write.png" alt="" height="15px" width="15px">
         </button>
-    </div>
-  
-    
-    `
-
+    </div>`
 }
-render(data)
+render(data);
 
+let lists = document.querySelectorAll(".card-items");
+let dragone = document.querySelector(".drag-1");
+let dragtwo = document.querySelector(".drag-2");
+let dragthre = document.querySelector(".drag-3");
+let dragfour = document.querySelector(".drag-4");
 
+for (list of lists){
+    list.addEventlistener("dragstart", function(e){
+        let selected = e.target;
+
+        dragone.addEventListener("dragover", function(e){
+            e.preventDefault();
+        })
+        dragone.addEventListener("drop", function(e){
+            dragone.appendChild(selected);
+            selected = null
+        })
+        dragtwo.addEventListener("dragover", function(e){
+            e.preventDefault();
+        })
+        dragtwo.addEventListener("drop", function(e){
+            dragtwo.appendChild(selected);
+            selected = null
+        })
+        dragthre.addEventListener("dragover", function(e){
+            e.preventDefault();
+        })
+        dragthre.addEventListener("drop", function(e){
+            dragthre.appendChild(selected);
+            selected = null
+        })
+        dragfour.addEventListener("dragover", function(e){
+            e.preventDefault();
+        })
+        dragfour.addEventListener("drop", function(e){
+            dragfour.appendChild(selected);
+            selected = null
+        })
+    })
+}
