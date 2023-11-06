@@ -19,13 +19,13 @@
 // function fullName(name, first){
 //     return name + first
 // }
-// console.log('Khangerel ', 'Be-ochir');
+// console.log(fullName('Khangerel ', 'Be-ochir'));
 
 
 // let a = 5;
 // let b = 7;
 
-// function addNum(a, b) {
+// function addNum() {
 //     return a + b
 // }
 // console.log(addNum(a, b));
@@ -33,15 +33,15 @@
 
 // let width = 5;
 // let length = 10;
-// function rectangle(length, width) {
+// function rectangle() {
 //     return length * width
 // }
 // console.log(rectangle(length, width));
 
 
-let length = 10;
-let width = 5;
-function perimeter(){
-    return (length + width) * 2
-}
-console.log(perimeter(length, width));
+// let length = 10;
+// let width = 5;
+// function perimeter(){
+//     return (length + width) * 2
+// }
+// console.log(perimeter(length, width));
