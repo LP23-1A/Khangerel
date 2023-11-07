@@ -5,6 +5,8 @@
 body {
   width: 100%;
   height: 100%;
+  background-image: url();
+  background-size: cover;
 }
 .flex {
   display: flex;
@@ -39,7 +41,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   border-radius: 7px;
-  gap: 18px;
+  gap: 10px;
 }
 .card-items {
   justify-content: space-between;
