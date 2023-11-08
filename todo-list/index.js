@@ -16,38 +16,33 @@ function closeModel() {
 close.onclick = closeModel;
 
 
-function randomNumberGenerate(){
+function randomNumberGanerate(){
     return String(Math.random(1));
 };
 
-
-
+const cards = document.getElementsByClassName("cardcontainer");
+const cardItems = document.querySelectorAll(".card-items");
+let todo = document.getElementById("todo");
+let inprogress = document.getElementById("inprogress");
+let stuck = document.getElementById("stuck");
+let done = document.getElementById("done");
 let data = [];
+
+
 function render(data){
-    let todonum = document.querySelectorAll("#todo-num");
-    const cards = document.getElementsByClassName("cardcontainer");
-    const cardItems = document.querySelectorAll(".card-items");
     cards[0].innerHTML = "";
     cards[1].innerHTML = "";
     cards[2].innerHTML = "";
     cards[3].innerHTML = "";
-    todonum[0].innerHTML = "";
-    todonum[1].innerHTML = "";
-    todonum[2].innerHTML = "";
-    todonum[3].innerHTML = "";
     for (let i = 0; i < data.length; i++) {
         if (data[i].status === "todo"){
             cards[0].innerHTML += createCard(data[i]);
-            todonum[0].innerHTML = cardItems.length + 1;
         } else if (data[i].status === "inprogress"){
             cards[1].innerHTML += createCard(data[i]);
-            todonum[1].innerHTML = cardItems.length + 1;
         } else if (data[i].status === "stuck"){
-            cards[2].innerHTML += createCard(data[i]);
-            todonum[2].innerHTML = cardItems.length + 1;
+            cards[2].innerHTML += createCard(data[i])
         } else if (data[i].status === "done"){
             cards[3].innerHTML += createCard(data[i]);
-            todonum[3].innerHTML = cardItems.length + 1;
         }
     }
     let removeBtn = document.querySelectorAll(".cancel-btn");
@@ -72,7 +67,7 @@ function addCard() {
         let textarea = document.querySelector("textarea");
         let status = document.getElementById("status");
         let priority = document.getElementById("priority");
-        mockData.id = randomNumberGenerate();
+        mockData.id = randomNumberGanerate();
         mockData.title = input.value
         mockData.desc = textarea.value
         mockData.status = status.value
@@ -81,7 +76,7 @@ function addCard() {
         render(data);
 }
 function createCard(card){
-    const { title, desc, priority, id } = card;
+    const { id, title, desc, priority} = card;
     return `
     <div class="card-items flex" draggable="true">
         <div class="start flex">
@@ -100,7 +95,6 @@ function createCard(card){
         </button>
     </div>`
 }
-
 function deleteItem(element) {
     const findId = element.id;
     const newArr = data.filter((el) => {
@@ -108,13 +102,13 @@ function deleteItem(element) {
       return el.id !== findId;
     });
     
+    data = newArr;
   
+    render(data);
 }  
-data = newArr;
-
-render(data);
 
 
+render(data)
 
 
 // let lists = document.querySelectorAll(".card-items");
