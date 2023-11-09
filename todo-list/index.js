@@ -70,6 +70,7 @@ function render(data){
         } else if (data[i].status === "done"){
             cards[3].innerHTML += createCard(data[i]);
         }
+
     }
     let removeBtn = document.querySelectorAll(".cancel-btn");
 
