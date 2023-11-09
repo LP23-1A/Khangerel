@@ -15,7 +15,6 @@ function closeModel() {
 }
 close.onclick = closeModel;
 
-
 function randomNumberGanerate(){
     return String(Math.random(1));
 };
@@ -28,12 +27,39 @@ let stuck = document.getElementById("stuck");
 let done = document.getElementById("done");
 let data = [];
 
-
 function render(data){
+    let count = {
+        todo: 0,
+        inprogress: 0,
+        stuck: 0,
+        done: 0,
+    }
+    data.map((e) => {
+        if (e.status === "todo") {
+          cards[0].innerHTML += createCard(e);
+          count.todo += 1;
+        }
+        if (e.status === "inprogress") {
+          cards[1].innerHTML += createCard(e);
+          count.inprogress += 1;
+        }
+        if (e.status === "stuck") {
+          cards[2].innerHTML += createCard(e);
+          count.stuck += 1;
+        }
+        if (e.status === "done") {
+          cards[3].innerHTML += createCard(e);
+          count.done += 1;
+        }
+    });
     cards[0].innerHTML = "";
     cards[1].innerHTML = "";
     cards[2].innerHTML = "";
     cards[3].innerHTML = "";
+    todo.innerHTML = count.todo;
+    inprogress.innerHTML = count.inprogress;
+    stuck.innerHTML = count.stuck;
+    done.innerHTML = count.done;
     for (let i = 0; i < data.length; i++) {
         if (data[i].status === "todo"){
             cards[0].innerHTML += createCard(data[i]);
@@ -53,9 +79,7 @@ function render(data){
         };
     });
 }
-console.log(data);
 function addCard() {
-    const uid = Math.random()
     const mockData = {
         id: '',
         title: '',
@@ -98,12 +122,10 @@ function createCard(card){
 function deleteItem(element) {
     const findId = element.id;
     const newArr = data.filter((el) => {
-      console.log(el.id, findId);
-      return el.id !== findId;
+        console.log(el.id, findId);
+        return el.id !== findId;
     });
-    
     data = newArr;
-  
     render(data);
 }  
 
@@ -151,3 +173,17 @@ render(data)
 //         })
 //     })
 // }
+
+// if (mockData.status === "todo"){
+//     count.todo += 1;
+// } else if (mockData.status === "inprogress"){
+//     count.inprogress += 1;
+// } else if (mockData.status === "stuck"){
+//     count.stuck += 1;
+// } else if (mockData.status === "done"){
+//     count.done += 1;
+// }
+// todo.innerHTML = count.todo;
+// inprogress.innerHTML = count.inprogress;
+// stuck.innerHTML = count.stuck;
+// done.innerHTML = count.done;
