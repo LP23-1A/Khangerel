@@ -1,17 +1,16 @@
 let addCards = document.querySelectorAll(".add-btn");
-let addTask = document.querySelector(".modal");
-let editbtn = document.querySelectorAll('.write-btn');
+let modal = document.querySelector(".modal");
 
-function openModal() {
-    addTask.style.opacity = 1;
+function isOpenModal() {
+    modal.style.opacity = 1;
 }
 for (let i = 0; i < addCards.length; i++){
-    addCards[i].onclick = openModal;
+    addCards[i].onclick = isOpenModal;
 };
 
 let close = document.querySelector('.close-btn');
 function closeModel() {
-    addTask.style.opacity = 0;
+    modal.style.opacity = 0;
 }
 close.onclick = closeModel;
 
@@ -52,14 +51,14 @@ function render(data){
           count.done += 1;
         }
     });
-    cards[0].innerHTML = "";
-    cards[1].innerHTML = "";
-    cards[2].innerHTML = "";
-    cards[3].innerHTML = "";
     todo.innerHTML = count.todo;
     inprogress.innerHTML = count.inprogress;
     stuck.innerHTML = count.stuck;
     done.innerHTML = count.done;
+    cards[0].innerHTML = "";
+    cards[1].innerHTML = "";
+    cards[2].innerHTML = "";
+    cards[3].innerHTML = "";
     for (let i = 0; i < data.length; i++) {
         if (data[i].status === "todo"){
             cards[0].innerHTML += createCard(data[i]);
@@ -78,8 +77,22 @@ function render(data){
         deleteItem(element)
         };
     });
+
+    // let editBtn = document.querySelectorAll(".cancel-btn");
+
+    // editBtn.forEach(element => {
+    //     element.onclick = function(){
+    //     isEdit(element)
+    //     };
+    // });
 }
-function addCard() {
+
+let input = document.querySelector("input");
+let textarea = document.querySelector("textarea");
+let status = document.getElementById("status");
+let priority = document.getElementById("priority");
+
+function addCard(isEdit) {
     const mockData = {
         id: '',
         title: '',
@@ -87,16 +100,19 @@ function addCard() {
         status: '',
         priority: '',
         }
-        let input = document.querySelector("input");
-        let textarea = document.querySelector("textarea");
-        let status = document.getElementById("status");
-        let priority = document.getElementById("priority");
         mockData.id = randomNumberGanerate();
         mockData.title = input.value
         mockData.desc = textarea.value
         mockData.status = status.value
         mockData.priority = priority.value
         data.push(mockData);
+        console.log(mockData);
+        if (isEdit){
+            
+        } else {
+            input.innerText = input.value;
+            input.value = "";
+        }
         render(data);
 }
 function createCard(card){
@@ -115,7 +131,7 @@ function createCard(card){
         </div>
         <div class="end flex">
             <button class="cancel-btn btn" id="${id}">X</button>
-            <button class="write-btn btn"><img src="./img/write.png" alt="" height="15px" width="15px">
+            <button class="write-btn btn" onclick="setData(false) id="${id}"><img src="./img/write.png" alt="" height="15px" width="15px">
         </button>
     </div>`
 }
@@ -128,7 +144,15 @@ function deleteItem(element) {
     data = newArr;
     render(data);
 }  
-
+function setData(element){
+    const findedId = element.id;
+    const newArr = data.filter((el) => {
+        console.log(el.id, findedId);
+        return el.id !== findedId;
+    });
+    data = newArr;
+    render(data)
+}
 
 render(data)
 
@@ -174,16 +198,13 @@ render(data)
 //     })
 // }
 
-// if (mockData.status === "todo"){
-//     count.todo += 1;
-// } else if (mockData.status === "inprogress"){
-//     count.inprogress += 1;
-// } else if (mockData.status === "stuck"){
-//     count.stuck += 1;
-// } else if (mockData.status === "done"){
-//     count.done += 1;
+
+// if (isEdit){
+//     data = data.map((el) => {
+//         if (el.id === id){
+//             mockData.id = id;
+//             return mockData;
+//         }
+//         return el;
+//     })
 // }
-// todo.innerHTML = count.todo;
-// inprogress.innerHTML = count.inprogress;
-// stuck.innerHTML = count.stuck;
-// done.innerHTML = count.done;
