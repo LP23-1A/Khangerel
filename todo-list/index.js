@@ -109,10 +109,11 @@ function addCard(isEdit) {
         data.push(mockData);
         console.log(mockData);
         if (isEdit){
-            
+           input.value = input.innerText; 
         } else {
             input.innerText = input.value;
             input.value = "";
+            textarea.value = "";
         }
         render(data);
 }
@@ -157,49 +158,47 @@ function setData(element){
 
 render(data)
 
+c
+let dragone = document.getElementById("drag-1")
+let dragtwo = document.getElementById("drag-2")
+let dragthre = document.getElementById("drag-3")
+let dragfour = document.getElementById("drag-4")
+let draggedItem = null;
 
-// let lists = document.querySelectorAll(".card-items");
-// let dragone = document.querySelector(".drag-1");
-// let dragtwo = document.querySelector(".drag-2");
-// let dragthre = document.querySelector(".drag-3");
-// let dragfour = document.querySelector(".drag-4");
-
-// for (list of lists){
-//     list.addEventlistener("dragstart", function(e){
-//         let selected = e.target;
-
-//         dragone.addEventListener("dragover", function(e){
-//             e.preventDefault();
-//         })
-//         dragone.addEventListener("drop", function(e){
-//             dragone.appendChild(selected);
-//             selected = null
-//         })
-//         dragtwo.addEventListener("dragover", function(e){
-//             e.preventDefault();
-//         })
-//         dragtwo.addEventListener("drop", function(e){
-//             dragtwo.appendChild(selected);
-//             selected = null
-//         })
-//         dragthre.addEventListener("dragover", function(e){
-//             e.preventDefault();
-//         })
-//         dragthre.addEventListener("drop", function(e){
-//             dragthre.appendChild(selected);
-//             selected = null
-//         })
-//         dragfour.addEventListener("dragover", function(e){
-//             e.preventDefault();
-//         })
-//         dragfour.addEventListener("drop", function(e){
-//             dragfour.appendChild(selected);
-//             selected = null
-//         })
-//     })
-// }
-
-
+for (list of cardItems){
+    list.addEventlistener("dragstart", function(e){
+        let selected = e.target;
+        e.target = lists
+        dragone.addEventListener("dragover", function(e){
+            e.preventDefault();
+        })
+        dragone.addEventListener("drop", function(e){
+            dragone.appendChild(selected);
+            selected = null
+        })
+        dragtwo.addEventListener("dragover", function(e){
+            e.preventDefault();
+        })
+        dragtwo.addEventListener("drop", function(e){
+            dragtwo.appendChild(selected);
+            selected = null
+        })
+        dragthre.addEventListener("dragover", function(e){
+            e.preventDefault();
+        })
+        dragthre.addEventListener("drop", function(e){
+            dragthre.appendChild(selected);
+            selected = null
+        })
+        dragfour.addEventListener("dragover", function(e){
+            e.preventDefault();
+        })
+        dragfour.addEventListener("drop", function(e){
+            dragfour.appendChild(selected);
+            selected = null
+        })
+    })
+}
 // if (isEdit){
 //     data = data.map((el) => {
 //         if (el.id === id){
@@ -209,3 +208,11 @@ render(data)
 //         return el;
 //     })
 // }
+// cardItems.forEach(() => {
+//     .addEventListener("dragstart", () => {
+//         .classList.add("is-dragging");
+//     });
+//     .addEventListener("dragend", () => {
+//         .classList.remove("is-dragging");
+//     });
+// });
