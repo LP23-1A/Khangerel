@@ -19,7 +19,6 @@ function randomNumberGanerate(){
 };
 
 const cards = document.getElementsByClassName("cardcontainer");
-const cardItems = document.querySelectorAll(".card-items");
 let todo = document.getElementById("todo");
 let inprogress = document.getElementById("inprogress");
 let stuck = document.getElementById("stuck");
@@ -37,6 +36,7 @@ function render(data){
         if (e.status === "todo") {
           cards[0].innerHTML += createCard(e);
           count.todo += 1;
+          console.log(count.todo);
         }
         if (e.status === "inprogress") {
           cards[1].innerHTML += createCard(e);
@@ -69,23 +69,18 @@ function render(data){
         } else if (data[i].status === "done"){
             cards[3].innerHTML += createCard(data[i]);
         }
-
     }
     let removeBtn = document.querySelectorAll(".cancel-btn");
 
-    removeBtn.forEach(element => {
-        element.onclick = function(){
-        deleteItem(element)
-        };
-    });
+    removeBtn.forEach((element) => {
+        element.onclick = () => deleteItem(element)
+    })
+    let doneBtn = document.querySelectorAll(".done-btn");
 
-    // let editBtn = document.querySelectorAll(".cancel-btn");
-
-    // editBtn.forEach(element => {
-    //     element.onclick = function(){
-    //     isEdit(element)
-    //     };
-    // });
+    doneBtn.forEach((element) => {
+        element.onclick = () => donecard(element);
+    })
+    drag()
 }
 
 let input = document.querySelector("input");
@@ -120,7 +115,7 @@ function addCard(isEdit) {
 function createCard(card){
     const { id, title, desc, priority} = card;
     return `
-    <div class="card-items flex" draggable="true">
+    <div class="card-items flex" draggable="true" data-id="${id}">
         <div class="start flex">
             <div class="done">
                 <button class="done-btn btn"><img src="./img/correct.png" alt="" height="15px" width="15px"></button>
@@ -146,59 +141,101 @@ function deleteItem(element) {
     data = newArr;
     render(data);
 }  
-function setData(element){
-    const findedId = element.id;
-    const newArr = data.filter((el) => {
-        console.log(el.id, findedId);
-        return el.id !== findedId;
-    });
-    data = newArr;
-    render(data)
+const donecard = (el) => {
+    const donelist = data.map((item) => {
+        if (item.id !== el.id) {
+            item.status = "done";
+        }
+        return item;
+    })
+    render(donelist)
 }
+// function setData(element){
+//     const findedId = element.id;
+//     const newArr = data.filter((el) => {
+//         console.log(el.id, findedId);
+//         return el.id !== findedId;
+//     });
+//     data = newArr;
+//     render(data)
+// }
 
 render(data)
 
-c
-let dragone = document.getElementById("drag-1")
-let dragtwo = document.getElementById("drag-2")
-let dragthre = document.getElementById("drag-3")
-let dragfour = document.getElementById("drag-4")
-let draggedItem = null;
+    
 
-for (list of cardItems){
-    list.addEventlistener("dragstart", function(e){
-        let selected = e.target;
-        e.target = lists
-        dragone.addEventListener("dragover", function(e){
-            e.preventDefault();
-        })
-        dragone.addEventListener("drop", function(e){
-            dragone.appendChild(selected);
-            selected = null
-        })
-        dragtwo.addEventListener("dragover", function(e){
-            e.preventDefault();
-        })
-        dragtwo.addEventListener("drop", function(e){
-            dragtwo.appendChild(selected);
-            selected = null
-        })
-        dragthre.addEventListener("dragover", function(e){
-            e.preventDefault();
-        })
-        dragthre.addEventListener("drop", function(e){
-            dragthre.appendChild(selected);
-            selected = null
-        })
-        dragfour.addEventListener("dragover", function(e){
-            e.preventDefault();
-        })
-        dragfour.addEventListener("drop", function(e){
-            dragfour.appendChild(selected);
-            selected = null
-        })
-    })
-}
+function drag() {
+    let draggedItem = null;
+    let cardItem = document.querySelectorAll(".card-items");
+
+    let cardscon = document.querySelectorAll(".cards");
+    
+    cardItem.forEach((card) => {
+        card.addEventListener('dragstart', (event) => {
+        event.target.value
+        draggedItem = event.target;
+        console.log(draggedItem);
+        event.dataTransfer.setData('text', event.target.getAttribute('data-id'));
+        });
+        card.addEventListener('dragend', () => {
+        draggedItem = null;
+        });
+        });
+        cardscon.forEach((board) => {
+        board.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        });
+        board.addEventListener('dragenter', (event) => {
+        event.preventDefault();
+        if (draggedItem) {
+        const draggingBoard = draggedItem.parentNode;
+        console.log(draggingBoard);
+        if (draggingBoard !== event.currentTarget) {
+        event.currentTarget.querySelector(".cardcontainer").appendChild(draggedItem);
+        }
+        }
+        });
+        board.addEventListener('dragleave', () => { });
+        board.addEventListener('drop', (event) => {
+        event.preventDefault();
+        });
+        });
+} 
+console.log(drag());
+// cardItem.forEach((card) => {
+//     card.addEventListener('dragstart', (event) => {
+//         event.target.value
+//         draggedItem = event.target;
+//         event.dataTransfer.setData('text', event.target.getAttribute('data-id'));
+//     })
+//     card.addEventListener('dragend', () => {
+//         draggedItem = null;
+//         });
+// })
+// cards.forEach((board) => {
+//     board.addEventListener('dragover', (event) => {
+//         event.preventDefault();
+//     })
+//     board.addEventListener('dragenter', (event) => {
+//         event.preventDefault();
+//     })
+//     if (draggedItem) {
+//         const draggingBoard = draggedItem.parentNode;
+//         if (draggingBoard !== event.currentTarget) {
+//             event.currentTarget.appendChild(draggedItem);
+//             }
+//     }
+//     board.addEventListener('dragleave', () => { });
+//     board.addEventListener('drop', (event) => {
+//     event.preventDefault();
+//     })
+// })
+
+
+
+
+
+
 // if (isEdit){
 //     data = data.map((el) => {
 //         if (el.id === id){
@@ -208,7 +245,7 @@ for (list of cardItems){
 //         return el;
 //     })
 // }
-// cardItems.forEach(() => {
+// cardItem.forEach(() => {
 //     .addEventListener("dragstart", () => {
 //         .classList.add("is-dragging");
 //     });
