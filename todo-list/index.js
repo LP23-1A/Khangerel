@@ -161,7 +161,9 @@ const donecard = (el) => {
 // }
 
 render(data)
+function isEdit() {
 
+}
     
 
 function drag() {
@@ -200,56 +202,4 @@ function drag() {
         event.preventDefault();
         });
         });
-} 
-console.log(drag());
-// cardItem.forEach((card) => {
-//     card.addEventListener('dragstart', (event) => {
-//         event.target.value
-//         draggedItem = event.target;
-//         event.dataTransfer.setData('text', event.target.getAttribute('data-id'));
-//     })
-//     card.addEventListener('dragend', () => {
-//         draggedItem = null;
-//         });
-// })
-// cards.forEach((board) => {
-//     board.addEventListener('dragover', (event) => {
-//         event.preventDefault();
-//     })
-//     board.addEventListener('dragenter', (event) => {
-//         event.preventDefault();
-//     })
-//     if (draggedItem) {
-//         const draggingBoard = draggedItem.parentNode;
-//         if (draggingBoard !== event.currentTarget) {
-//             event.currentTarget.appendChild(draggedItem);
-//             }
-//     }
-//     board.addEventListener('dragleave', () => { });
-//     board.addEventListener('drop', (event) => {
-//     event.preventDefault();
-//     })
-// })
-
-
-
-
-
-
-// if (isEdit){
-//     data = data.map((el) => {
-//         if (el.id === id){
-//             mockData.id = id;
-//             return mockData;
-//         }
-//         return el;
-//     })
-// }
-// cardItem.forEach(() => {
-//     .addEventListener("dragstart", () => {
-//         .classList.add("is-dragging");
-//     });
-//     .addEventListener("dragend", () => {
-//         .classList.remove("is-dragging");
-//     });
-// });
+}
