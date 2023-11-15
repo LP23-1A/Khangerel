@@ -18,7 +18,7 @@ function randomNumberGanerate(){
     return String(Math.random(1));
 };
 
-const cards = document.getElementsByClassName("cardcontainer");
+const cards = document.querySelectorAll(".cardcontainer");
 let todo = document.getElementById("todo");
 let inprogress = document.getElementById("inprogress");
 let stuck = document.getElementById("stuck");
@@ -36,7 +36,6 @@ function render(data){
         if (e.status === "todo") {
           cards[0].innerHTML += createCard(e);
           count.todo += 1;
-          console.log(count.todo);
         }
         if (e.status === "inprogress") {
           cards[1].innerHTML += createCard(e);
@@ -80,6 +79,11 @@ function render(data){
     doneBtn.forEach((element) => {
         element.onclick = () => donecard(element);
     })
+    let editBtn = document.querySelectorAll(".write-btn");
+
+    editBtn.forEach((element) => {
+        element.onclick = () => isEdit(element);
+    })
     drag()
 }
 
@@ -97,28 +101,20 @@ function addCard(isEdit) {
         priority: '',
         }
         mockData.id = randomNumberGanerate();
-        mockData.title = input.value
-        mockData.desc = textarea.value
-        mockData.status = status.value
-        mockData.priority = priority.value
+        mockData.title = input.value;
+        mockData.desc = textarea.value;
+        mockData.status = status.value;
+        mockData.priority = priority.value;
         data.push(mockData);
-        console.log(mockData);
-        if (isEdit){
-           input.value = input.innerText; 
-        } else {
-            input.innerText = input.value;
-            input.value = "";
-            textarea.value = "";
-        }
-        render(data);
+    render(data);
 }
 function createCard(card){
     const { id, title, desc, priority} = card;
     return `
-    <div class="card-items flex" draggable="true" data-id="${id}">
+    <div class="card-items flex" draggable="true">
         <div class="start flex">
-            <div class="done">
-                <button class="done-btn btn"><img src="./img/correct.png" alt="" height="15px" width="15px"></button>
+            <div class="done"> 
+                <button class="done-btn btn" id="${id}"><img src="./img/correct.png " alt="" height="15px" width="15px"></button>
             </div>
             <div class="write-task">
                 <h1>${title}</h1>
@@ -140,31 +136,25 @@ function deleteItem(element) {
     });
     data = newArr;
     render(data);
-}  
+}
 const donecard = (el) => {
     const donelist = data.map((item) => {
-        if (item.id !== el.id) {
+        if (item.id === el.id) {
             item.status = "done";
         }
-        return item;
+        return item
     })
     render(donelist)
 }
-// function setData(element){
-//     const findedId = element.id;
-//     const newArr = data.filter((el) => {
-//         console.log(el.id, findedId);
-//         return el.id !== findedId;
-//     });
-//     data = newArr;
-//     render(data)
-// }
-
+console.log(donecard);
 render(data)
-function isEdit() {
-
+function isEdit(element) {
+    if (element) {
+        input.value = data.input;
+    }
+    isOpenModal()
 }
-    
+
 
 function drag() {
     let draggedItem = null;
@@ -174,28 +164,28 @@ function drag() {
     
     cardItem.forEach((card) => {
         card.addEventListener('dragstart', (event) => {
-        event.target.value
-        draggedItem = event.target;
-        console.log(draggedItem);
-        event.dataTransfer.setData('text', event.target.getAttribute('data-id'));
+            event.target.value
+            draggedItem = event.target;
+            console.log(draggedItem);
+            event.dataTransfer.setData('text', event.target.getAttribute('data-id'));
         });
         card.addEventListener('dragend', () => {
         draggedItem = null;
         });
         });
         cardscon.forEach((board) => {
-        board.addEventListener('dragover', (event) => {
-        event.preventDefault();
+            board.addEventListener('dragover', (event) => {
+            event.preventDefault();
         });
         board.addEventListener('dragenter', (event) => {
-        event.preventDefault();
-        if (draggedItem) {
-        const draggingBoard = draggedItem.parentNode;
-        console.log(draggingBoard);
-        if (draggingBoard !== event.currentTarget) {
-        event.currentTarget.querySelector(".cardcontainer").appendChild(draggedItem);
-        }
-        }
+            event.preventDefault();
+            if (draggedItem) {
+                const draggingBoard = draggedItem.parentNode;
+                console.log(draggingBoard);
+                if (draggingBoard !== event.currentTarget) {
+                    event.currentTarget.querySelector(".cardcontainer").appendChild(draggedItem);
+                }
+            }   
         });
         board.addEventListener('dragleave', () => { });
         board.addEventListener('drop', (event) => {

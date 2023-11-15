@@ -14,7 +14,7 @@
                     <h1>To do</h1>
                     <div class="todo-num" id="todo">0</div>
                 </div>
-                <div class="cardcontainer flex" draggable="true">
+                <div class="cardcontainer flex">
                 </div>
                 <button class="add-btn flex">
                     <p>+</p>
@@ -26,7 +26,7 @@
                     <h1>In-progress</h1>
                     <div class="todo-num" id="inprogress">0</div>
                 </div>
-                <div class="cardcontainer flex" draggable="true">
+                <div class="cardcontainer flex">
                 </div>
                 <button class="add-btn flex">
                     <p>+</p>
@@ -38,7 +38,7 @@
                     <h1>Stuck</h1>
                     <div class="todo-num" id="stuck">0</div>
                 </div>
-                <div class="cardcontainer flex" draggable="true">
+                <div class="cardcontainer flex">
                 </div>
                 <button class="add-btn flex">
                     <p>+</p>
@@ -50,7 +50,7 @@
                     <h1>Done</h1>
                     <div class="todo-num" id="done">0</div>
                 </div>
-                <div class="cardcontainer flex" draggable="true">
+                <div class="cardcontainer flex">
                 </div>
                 <button class="add-btn flex">
                     <p>+</p>
@@ -68,11 +68,11 @@
             </div>
             <div class="title">
                 <p>Title</p>
-                <input class="input-title" type="text" placeholder="Гарчиг оруулах">
+                <input class="input-title" type="text" placeholder="works">
             </div>
             <div class="description">
                 <p>Description</p>
-                <textarea name="" id="desc" cols="30" rows="10" placeholder="Тайлбар оруулах"></textarea>
+                <textarea name="" id="desc" cols="30" rows="10" placeholder="your opinion"></textarea>
             </div>
             <div class="status">
                 <p>Status</p>
@@ -97,3 +97,46 @@
     <script src="./index.js"></script>
 </body>
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+ .modal {
+ display: none;
+ }
+ </style>
+ <title>Document</title>
+</head>
+<body>
+    <button onclick="isModalOpen()">add card</button>
+    <button onclick="setData(true)">edit</button>
+    <div class="modal">
+        <input type="text">
+        <button onclick="setData(false)">add</button>
+    </div>
+    <span></span>
+ <script>
+ let modal = document.getElementsByClassName('modal')[0];
+ let input = document.querySelector('input');
+ let span = document.querySelector('span');
+ function isModalOpen() {
+ if (modal.style.display == "block") modal.style.display = 'none';
+    else modal.style.display = 'block';
+ }
+ function setData(isEdit) {
+    if (isEdit) {
+        input.value = span.innerText;
+        } else {
+        span.innerText = input.value;
+        input.value = "";
+    }
+ isModalOpen();
+ }
+ </script>
+</body>
+</html> -->
