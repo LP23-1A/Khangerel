@@ -1,5 +1,6 @@
 let addCards = document.querySelectorAll(".add-btn");
 let modal = document.querySelector(".modal");
+let addtask = document.querySelectorAll(".task");
 
 function isOpenModal() {
   modal.style.opacity = 1;
@@ -24,6 +25,7 @@ let inprogress = document.getElementById("inprogress");
 let stuck = document.getElementById("stuck");
 let done = document.getElementById("done");
 let data = [];
+
 let count = {
   todo: 0,
   inprogress: 0,
@@ -81,8 +83,12 @@ function render(data) {
   let editBtn = document.querySelectorAll(".write-btn");
 
   editBtn.forEach((element) => {
-    element.onclick = () => isEdit(element);
+    element.onclick = () => edit(element);
   });
+  function edit(element, action) {
+    isOpenModal();
+    addtask.onclick = () => addCard(element, action);
+  }
   drag();
 }
 
@@ -91,23 +97,25 @@ let textarea = document.querySelector("textarea");
 let status = document.getElementById("status");
 let priority = document.getElementById("priority");
 
-function addCard(action) {
-  if (action === "edit") {
-    mockData.id = randomNumberGanerate();
-    mockData.title = input.value;
-    mockData.desc = textarea.value;
-    mockData.status = status.value;
-    for (let i = 0; i < data.length; i++) {
-      if (mockData[i].id === id) {
-        mockData[i].title = title;
-        mockData[i].desc = desc;
-        mockData[i].status = status;
-      }
-    }
-    render(data);
-    closeModalTrigger();
-    return;
-  }
+function addCard(element, action) {
+  //   if ("edit" === action) {
+  //     const id = element.id;
+  //     console.log(element);
+  //     for (let i = 0; i < data.length; i++) {
+  //       if (data[i].id === id) {
+  //         let input = document.getElementById("input").value;
+  //         let desc = document.getElementById("desc").value;
+  //         let status = document.getElementById("status").value;
+  //         data[i].title = input;
+  //         data[i].desc = desc;
+  //         data[i].status = status;
+  //       }
+  //     }
+  //     console.log(element.id);
+  //     closeModel();
+  //     render(data);
+  //     return;
+  //   }
   const mockData = {
     id: "",
     title: "",
@@ -122,6 +130,7 @@ function addCard(action) {
   mockData.priority = priority.value;
   data.push(mockData);
   render(data);
+  closeModel();
 }
 function createCard(card) {
   const { id, title, desc, priority } = card;
@@ -162,11 +171,6 @@ const donecard = (el) => {
 };
 
 render(data);
-function isEdit() {
-  input.value = data.title;
-  textarea.value = data.desc;
-  isOpenModal();
-}
 
 function drag() {
   let count = {
@@ -210,8 +214,8 @@ function drag() {
     board.addEventListener("drop", (event) => {
       event.preventDefault();
       let id = draggedItem.getAttribute("id");
-      console.log(id);
       data.filter((el) => {
+        element.id = innerHTML = "";
         if (el.id === id) {
           if (el.status === "todo") {
             count.todo -= 1;
@@ -242,7 +246,6 @@ function drag() {
             count.done += 1;
           }
         }
-        console.log(index);
       });
       todo.innerHTML = count.todo;
       inprogress.innerHTML = count.inprogress;

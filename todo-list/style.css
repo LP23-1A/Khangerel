@@ -105,9 +105,9 @@ body {
 }
 /* Modal */
 .closing {
-    display: fixed;
-    background-color: rgb(67, 67, 67) !important;
-    position: absolute !important;
+  display: fixed;
+  background-color: rgb(67, 67, 67) !important;
+  position: absolute !important;
 }
 .modal {
   width: 380px;

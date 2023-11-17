@@ -55,46 +55,43 @@
         </div>
       </div>
     </section>
-    <div class="close-area">
-      <div class="closing"></div>
-      <div class="modal flex radius">
-        <div class="card-header flex">
-          <h1>Add Task</h1>
-          <button class="close-btn btn">X</button>
-        </div>
-        <div class="title">
-          <p>Title</p>
-          <input class="input-title" type="text" placeholder="works" />
-        </div>
-        <div class="description">
-          <p>Description</p>
-          <textarea
-            name=""
-            id="desc"
-            cols="30"
-            rows="10"
-            placeholder="your opinion"
-          ></textarea>
-        </div>
-        <div class="status">
-          <p>Status</p>
-          <select name="status" id="status">
-            <option value="todo">To do</option>
-            <option value="inprogress">In progress</option>
-            <option value="stuck">Stuck</option>
-            <option value="done">Done</option>
-          </select>
-        </div>
-        <div class="priorities">
-          <p>Priority</p>
-          <select name="priority" id="priority">
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
-        </div>
-        <button class="task radius" onclick="addCard()">Add Task</button>
+    <div class="modal flex radius">
+      <div class="card-header flex">
+        <h1>Add Task</h1>
+        <button class="close-btn btn">X</button>
       </div>
+      <div class="title">
+        <p>Title</p>
+        <input class="input-title" type="text" id="input" placeholder="works" />
+      </div>
+      <div class="description">
+        <p>Description</p>
+        <textarea
+          name=""
+          id="desc"
+          cols="30"
+          rows="10"
+          placeholder="your opinion"
+        ></textarea>
+      </div>
+      <div class="status">
+        <p>Status</p>
+        <select name="status" id="status">
+          <option value="todo">To do</option>
+          <option value="inprogress">In progress</option>
+          <option value="stuck">Stuck</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+      <div class="priorities">
+        <p>Priority</p>
+        <select name="priority" id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+      <button class="task radius" onclick="addCard(false)">Add Task</button>
     </div>
     <script src="./index.js"></script>
   </body>
