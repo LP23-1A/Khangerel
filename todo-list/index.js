@@ -26,13 +26,13 @@ let stuck = document.getElementById("stuck");
 let done = document.getElementById("done");
 let data = [];
 
-let count = {
-  todo: 0,
-  inprogress: 0,
-  stuck: 0,
-  done: 0,
-};
 function render(data) {
+  let count = {
+    todo: 0,
+    inprogress: 0,
+    stuck: 0,
+    done: 0,
+  };
   data.map((e) => {
     if (e.status === "todo") {
       cards[0].innerHTML += createCard(e);
@@ -98,24 +98,24 @@ let status = document.getElementById("status");
 let priority = document.getElementById("priority");
 
 function addCard(element, action) {
-  //   if ("edit" === action) {
-  //     const id = element.id;
-  //     console.log(element);
-  //     for (let i = 0; i < data.length; i++) {
-  //       if (data[i].id === id) {
-  //         let input = document.getElementById("input").value;
-  //         let desc = document.getElementById("desc").value;
-  //         let status = document.getElementById("status").value;
-  //         data[i].title = input;
-  //         data[i].desc = desc;
-  //         data[i].status = status;
-  //       }
-  //     }
-  //     console.log(element.id);
-  //     closeModel();
-  //     render(data);
-  //     return;
-  //   }
+    if ("edit" === action) {
+      const id = element.id;
+      console.log(element);
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].id === id) {
+          let input = document.getElementById("input").value;
+          let desc = document.getElementById("desc").value;
+          let status = document.getElementById("status").value;
+          data[i].title = input;
+          data[i].desc = desc;
+          data[i].status = status;
+        }
+      }
+      console.log(element.id);
+      closeModel();
+      render(data);
+      return;
+    }
   const mockData = {
     id: "",
     title: "",
