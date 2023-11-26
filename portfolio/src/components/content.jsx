@@ -1,8 +1,9 @@
 import Location from "@/components/Location";
 import Dot from "@/components/Dot";
-import Icon from "@/components/Icons";
 import Sagar from "./Sagar";
-
+import Git from "./git";
+import Twitter from "./twitter";
+import Figma from "./figma";
 
 const Contents = () => {
     return (
@@ -26,13 +27,15 @@ const Contents = () => {
                     <Dot /> Available for new projects
                 </p>
             </div>
-            <div className="icons flex">
-                <Icon />
+            <div className="icons flex items-center">
+                <Git />
+                <Twitter />
+                <Figma />
             </div>
         </div>
         <div className="picture">
             <Sagar />
-            <div className="relative top-0.5"></div>
+            <div className="relative h-[260px] w-[250px] top-12 bg-zinc-300"></div>
         </div>
     </div>
     )

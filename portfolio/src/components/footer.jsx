@@ -1,7 +1,9 @@
 import Messege from "@/components/messege"
 import Copy from "./copy"
 import Phone from "./phone"
-import Icon from "@/components/Icons"
+import Git from "./git";
+import Twitter from "./twitter";
+import Figma from "./figma";
 
 const Footer = () => {
     return (
@@ -22,7 +24,11 @@ const Footer = () => {
                     <Copy />
                 </div>
                 <p className="p">You may also find me on these platforms!</p>
-                <div><Icon /></div>
+                <div className="flex items-center justify-center">
+                <Git />
+                <Twitter />
+                <Figma />
+                </div>
             </div>
             <div className="mx-auto">
                 <p className="p">2023 | Designed and coded with ❤️️ by Sagar Shah</p>

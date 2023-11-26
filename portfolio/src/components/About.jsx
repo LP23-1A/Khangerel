@@ -7,8 +7,8 @@ export default function About() {
             <button className="btn flex mx-auto bg-zinc-300 py-2 px-5 rounded-2xl">About me</button>
             <div className="body--sec flex justify-between ">
                 <div className="left">
+                    <div className="relative--abt relative bg-zinc-300 h-[450px] w-[350px] top-[50px]"></div>
                     <Sagarntr/>
-                    <div className="relative--abt"></div>
                 </div>
                 <div className="right flex flex-col w-2/4 gap-4">
                     <h1 className="text-zinc-950 text-4xl">Curious about me? Here you have it:</h1>

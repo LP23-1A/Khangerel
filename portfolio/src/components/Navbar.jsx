@@ -8,7 +8,7 @@ export default function Navbar() {
         <Theme />
       </div>
       <div className="nav--left flex gap-7 items-center">
-          <ul className="list--items flex gap-7">
+          <ul className="list--items flex gap-7 max-md:hidden">
             <li>About</li>
             <li>Work</li>
             <li>Testimonials</li>
