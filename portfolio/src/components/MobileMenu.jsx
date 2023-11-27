@@ -1,10 +1,10 @@
 import Theme from "./Theme"
-import CloseIcon from "./CloseIcon"
-import Logo from "./Logoicon"
+import CloseIcon from "./Icons/CloseIcon"
+import Logo from "./Icons/Logoicon"
 
 const MobileMenu = (props) => {
     const closeHandler = () => {
-        props.serIsOpen(false)
+        props.setIsOpen(false)
     }
     return (
     <div className="w-screen h-screen top-0 left-0 absolute bg-gray-400 flex justify-end">

@@ -6,7 +6,7 @@ import { Experience } from "@/components/Experience";
 import Work from "@/components/work";
 import Footer from "@/components/footer";
 import { useState } from "react";
-import DarkTheme from "../components/DarkTheme"
+import DarkTheme from "../components/Icons/DarkTheme"
 
 export default function Home() {
   const [dark, setDark] = useState(true);

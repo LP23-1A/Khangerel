@@ -1,9 +1,9 @@
-import Messege from "@/components/messege"
+import Messege from "@/components/Icons/messege"
 import Copy from "./copy"
-import Phone from "./phone"
-import Git from "./git";
-import Twitter from "./twitter";
-import Figma from "./figma";
+import Phone from "./Icons/phone"
+import Git from "./Icons/git";
+import Twitter from "./Icons/twitter";
+import Figma from "./Icons/figma";
 
 const Footer = () => {
     return (

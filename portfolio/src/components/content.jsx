@@ -1,9 +1,9 @@
 import Location from "@/components/Location";
-import Dot from "@/components/Dot";
+import Dot from "@/components/Icons/Dot";
 import Sagar from "./Sagar";
-import Git from "./git";
-import Twitter from "./twitter";
-import Figma from "./figma";
+import Git from "./Icons/git";
+import Twitter from "./Icons/twitter";
+import Figma from "./Icons/figma";
 
 const Contents = () => {
     return (
@@ -34,7 +34,7 @@ const Contents = () => {
             </div>
         </div>
         <div className="picture max-md:py-7">
-            <div className="relative h-[260px] w-[250px] top-12 bg-zinc-300 max-md:top-[-25px] max-md:mx-auto max-md:w-[280px]"><Sagar /></div>
+            <div className="relative h-[260px] w-[250px] top-12 bg-zinc-300 max-md:top-[-25px] max-md:mx-auto max-md:w-[280px]" onClick={BLock}><Sagar /></div>
         </div>
     </div>
     )
