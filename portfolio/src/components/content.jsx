@@ -7,8 +7,8 @@ import Figma from "./figma";
 
 const Contents = () => {
     return (
-    <div className="body flex mx-auto max-w-7xl py-24 text-lg justify-between">
-        <div className="information flex flex-col gap-14 max-w-4xl">
+    <div className="body flex mx-auto max-w-7xl py-24 text-lg justify-between max-md:flex-col-reverse max-md:p-5">
+        <div className="information flex flex-col gap-24 max-w-4xl max-md:flex-col">
             <div className="info flex flex-col gap-5">
                 <h2 className="text-6xl">Hi, I’m Sagar 👋</h2>
                 <p>
@@ -33,9 +33,8 @@ const Contents = () => {
                 <Figma />
             </div>
         </div>
-        <div className="picture">
-            <Sagar />
-            <div className="relative h-[260px] w-[250px] top-12 bg-zinc-300"></div>
+        <div className="picture max-md:py-7">
+            <div className="relative h-[260px] w-[250px] top-12 bg-zinc-300 max-md:top-[-25px] max-md:mx-auto max-md:w-[280px]"><Sagar /></div>
         </div>
     </div>
     )

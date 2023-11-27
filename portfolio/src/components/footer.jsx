@@ -18,7 +18,7 @@ const Footer = () => {
                     <h1>reachsagarshah@gmail.com</h1>
                     <Copy />
                 </div>
-                <div className="call flex gap-5 mx-auto">
+                <div className="call flex gap-5 mx-auto max-md:gap-0">
                     <Phone />
                     <h1>+91 8980500565</h1>
                     <Copy />

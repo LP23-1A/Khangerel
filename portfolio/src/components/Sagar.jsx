@@ -4,7 +4,7 @@ export default function Sagar() {
 
     return(
         <div>
-            <img className="pic h-64 right-1 top-1 absolute right-[170px] z-10 top-[190px]" src={image.src}></img>
+            <img className="pic h-full right-[25px] top-[-25px] absolute max-md:top-[-10px] max-md:right-[10px]" src={image.src}></img>
         </div>
     )
 }

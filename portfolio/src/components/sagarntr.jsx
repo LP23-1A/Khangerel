@@ -2,6 +2,6 @@ import image from "@/components/image/natural.jpeg"
 
 export default function Sagarntr() {
     return(
-        <img className="pic-2 h-3/5 w-90 absolute left-[170px] top-[840px]" src={image.src}></img>
+        <img className="pic-2 h-full w-90 absolute top-[-45px] left-[45px] max-md:left-[10px]" src={image.src}></img>
     )
 }
