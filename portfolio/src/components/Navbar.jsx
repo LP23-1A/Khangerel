@@ -1,9 +1,9 @@
-import Logo from "@/components/Icons/Logoicon";
+import Logo from "@/components/Logoicon";
 import Theme from "@/components/Theme";
 import MENU from "./Menu";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
-import DarkTheme from "./Icons/DarkTheme";
+import DarkTheme from "./DarkTheme";
 
 
 export default function Navbar({ Handler }) {

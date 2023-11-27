@@ -1,6 +1,6 @@
 import Theme from "./Theme"
-import CloseIcon from "./Icons/CloseIcon"
-import Logo from "./Icons/Logoicon"
+import CloseIcon from "./CloseIcon"
+import Logo from "./Logoicon"
 
 const MobileMenu = (props) => {
     const closeHandler = () => {

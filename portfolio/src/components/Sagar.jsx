@@ -1,4 +1,4 @@
-import image from "./image/s.jpeg"
+import image from "../components/image/s.jpeg"
 
 export default function Sagar() {
 

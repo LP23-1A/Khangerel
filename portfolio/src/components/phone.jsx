@@ -1,4 +1,4 @@
-import call from "@/components/image/phone.svg"
+import call from "./image/phone.svg"
 
 const Phone = () => {
     return (

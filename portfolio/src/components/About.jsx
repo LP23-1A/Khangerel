@@ -1,9 +1,9 @@
 import Sagarntr from "./sagarntr";
 
 
-export default function About({Handler}) {
+export default function About() {
     return(
-        <div className="content--body flex flex-col max-w-7xl mx-auto text-lg text-slate-500 gap-10 bg-neutral-100 py-20" Handler={{Handler}}>
+        <div className="content--body flex flex-col max-w-7xl mx-auto text-lg text-slate-500 gap-10 bg-neutral-100 py-20">
             <button className="btn flex mx-auto bg-zinc-300 py-2 px-5 rounded-2xl">About me</button>
             <div className="body--sec flex justify-between max-md:flex-col max-md:gap-24 max-md:px-10">
                 <div className="left max-md:mx-auto">
