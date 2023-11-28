@@ -33,13 +33,13 @@ const Expdata = () => {
                         <div className="flex gap-3 max-md:flex-col-reverse">
                             <div className="updesc flex flex-col gap-3">
                                 <h1 className="text-slate-950 gap-14 text-3xl">{el.h1}</h1>
-                                <ul className=" flex flex-col gap-2">
+                                <ul className=" flex flex-col gap-2 text-slate-950">
                                     <li><p>{el.p}</p></li>
                                     <li><p>{el.p1}</p></li>
                                     <li><p>{el.p2}</p></li>
                                 </ul>
                             </div>
-                            <p>{el.day}</p>
+                            <p className="text-slate-950">{el.day}</p>
                         </div>
                     </div>
                 )

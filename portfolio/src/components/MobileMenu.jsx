@@ -7,7 +7,7 @@ const MobileMenu = (props) => {
         props.setIsOpen(false)
     }
     return (
-    <div className="w-screen h-screen top-0 left-0 absolute bg-gray-400 flex justify-end">
+    <div className="w-screen h-screen top-0 left-0 absolute bg-gray-400 flex justify-end z-50">
         <div className="w-10/12  h-screen p-4 bg-white">
             <div className="flex justify-between">
                 <Theme />
