@@ -72,7 +72,7 @@ const Technology = () => {
                 return(
                     <div>
                         <img className="pic-3 h-20" src={el.url} alt="" />
-                        <p className="text-center">{el.content}</p>
+                        <p className="text-center dark:text-slate-300">{el.content}</p>
                     </div>
                 )
             })

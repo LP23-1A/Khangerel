@@ -22,18 +22,18 @@ const Maping = () => {
                 data.map((props) => {
                     return (
                         <div className="flex flex-wrap gap-3">
-                            <h1>{props.h1}</h1>
-                            <p>{props.p}</p>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool1}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool2}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool3}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool4}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool5}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool6}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool7}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool8}</button>
-                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit">{props.tool9}</button>
+                            <h1 className="dark:text-white">{props.h1}</h1>
+                            <p className="dark:text-slate-300">{props.p}</p>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool1}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool2}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool3}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool4}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool5}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool6}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool7}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool8}</button>
+                            <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200">{props.tool9}</button>
                         </div>
                     )
                 })
