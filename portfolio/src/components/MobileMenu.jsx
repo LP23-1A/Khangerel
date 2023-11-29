@@ -1,7 +1,8 @@
-import Theme from "./Theme"
-import CloseIcon from "./CloseIcon"
-import Logo from "./Logoicon"
+import Theme from "./Theme";
+import CloseIcon from "./CloseIcon";
+import Logo from "./Logoicon";
 import { useTheme } from "next-themes";
+import Moon from "./DarkTheme";
 
 const MobileMenu = (props) => {
     const { theme, setTheme } = useTheme();
@@ -38,6 +39,7 @@ const MobileMenu = (props) => {
                     <p>Switch theme</p>
                     <button onClick={themeToggle}>
                         <Logo />
+                        <Moon />
                     </button>
                 </div>
                 <button className="mt-4 w-full bg-black text-white px-4 py-1.5 rounded-lg font-medium dark:bg-white dark:text-slate-900 font-medium">

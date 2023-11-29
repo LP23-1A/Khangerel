@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "i": "^0.3.7",
     "next-themes": "^0.2.1",
+    "npm": "^10.2.4",
     "react": "^18",
     "react-dom": "^18"
   },
