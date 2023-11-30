@@ -4,7 +4,7 @@ import Sagarntr from "./sagarntr";
 export default function About() {
     return(
         <div className="content--body flex flex-col max-w-screen-2xl px-[80px] mx-auto text-lg text-slate-500 gap-10 bg-neutral-100 py-20 max-md:px-0 dark:bg-slate-900">
-            <button className="btn flex mx-auto bg-zinc-300 py-2 px-5 rounded-2xl dark:bg-slate-500 dark:text-slate-200">About me</button>
+            <button className="btn flex mx-auto bg-zinc-300 py-2 px-5 rounded-2xl dark:bg-slate-500 dark:text-slate-200 hover:bg-violet-400 dark:hover:bg-violet-400">About me</button>
             <div className="body--sec flex justify-between max-md:flex-col max-md:gap-24 max-md:px-10">
                 <div className="left max-md:mx-auto">
                     <div className="relative--abt relative bg-zinc-300 h-[450px] w-[360px] top-[50px] max-md:h-[430px] max-sm:h-[350px] max-sm:w-[250px] dark:bg-slate-600"><Sagarntr/></div>

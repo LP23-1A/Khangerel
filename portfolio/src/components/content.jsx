@@ -10,7 +10,7 @@ const Contents = () => {
     <div className="body flex mx-auto max-w-screen-2xl px-[80px] py-24 text-lg justify-between max-md:flex-col-reverse max-md:p-5">
         <div className="information flex flex-col gap-24 max-w-4xl max-md:flex-col">
             <div className="info flex flex-col gap-5">
-                <h2 className="text-6xl">Hi, I’m Sagar 👋</h2>
+                <h2 className="text-6xl animate-pulse">Hi, I’m Khaankoo 👋</h2>
                 <p>
                 I'm a full stack developer (React.js & Node.js) with a focus on
                 creating (and occasionally designing) exceptional digital

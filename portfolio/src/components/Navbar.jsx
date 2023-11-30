@@ -1,10 +1,9 @@
-import Logo from "@/components/Logoicon";
-import Theme from "@/components/Theme";
+
 import MENU from "./Menu";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import { useTheme } from "next-themes";
-import Moon from "./DarkTheme";
+import ModeChange from "./modeChange"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,19 +22,18 @@ export default function Navbar() {
   };
   return (
     <header className="header flex justify-between max-w-screen-2xl px-[80px] mx-auto pt-5 items-center max-md:px-2">
-      <div>
-        <Theme />
+      <div className="font-normal text-3xl dark:text-white">
+        <h1><b>{'<SS/>'}</b></h1>
       </div>
       <div className="nav--left flex gap-7 items-center max-md:hidden">
-        <ul className="list--items flex gap-7">
+        <ul className="list--items flex gap-7 border-r-2 pr-5">
           <li>About</li>
           <li>Work</li>
           <li>Testimonials</li>
           <li>Contact</li>
         </ul>
         <button className="dark-mode" onClick={themeToggle}>
-          <Logo />
-          <Moon />
+          <ModeChange />
         </button>
         <button className="download--CV bg-slate-900 py-2 px-5 text-white rounded-xl dark:bg-white dark:text-slate-900 font-medium">
           Download CV
