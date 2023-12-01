@@ -34,7 +34,7 @@ const Contents = () => {
             </div>
         </div>
         <div className="picture max-md:py-7">
-            <div className="relative h-[260px] w-[250px] top-12 bg-zinc-300 max-md:top-[-25px] max-md:mx-auto max-md:w-[280px] dark:bg-slate-600"><Sagar /></div>
+            <div className="relative h-[260px] w-[250px] top-12 bg-zinc-300 max-md:top-[-25px] max-md:mx-auto max-md:w-[288px] dark:bg-slate-600"><Sagar /></div>
         </div>
     </div>
     )
