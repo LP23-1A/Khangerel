@@ -13,7 +13,7 @@ const MobileMenu = (props) => {
         if (theme === "dark") {
           setTheme("light");
         }
-        if (theme === "light") {
+        if (theme === "light" || theme == "system") {
           setTheme("dark");
         }
       };
