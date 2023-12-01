@@ -3,7 +3,8 @@ import MENU from "./Menu";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import { useTheme } from "next-themes";
-import ModeChange from "./modeChange"
+import Moon from "./DarkTheme";
+import Logo from "./Logoicon";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function Navbar() {
           <li>Contact</li>
         </ul>
         <button className="dark-mode" onClick={themeToggle}>
-          <ModeChange />
+          {theme === "dark" ? <Logo /> : <Moon />}
         </button>
         <button className="download--CV bg-slate-900 py-2 px-5 text-white rounded-xl dark:bg-white dark:text-slate-900 font-medium">
           Download CV

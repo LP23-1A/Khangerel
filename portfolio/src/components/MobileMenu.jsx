@@ -1,7 +1,8 @@
-import Theme from "./Theme";
 import CloseIcon from "./CloseIcon";
 import { useTheme } from "next-themes";
-import ModeChange from "./modeChange";
+import Logo from "./Logoicon";
+import Moon from "./DarkTheme";
+
 
 const MobileMenu = (props) => {
     const { theme, setTheme } = useTheme();
@@ -17,7 +18,7 @@ const MobileMenu = (props) => {
         }
       };
     return (
-    <div className="w-screen h-screen top-0 left-0 absolute bg-gray-400 flex justify-end z-50">
+    <div className="w-full h-screen top-0 left-0 absolute bg-gray-400 flex justify-end z-50">
         <div className="w-10/12  h-screen p-4 bg-white dark:bg-slate-900">
             <div className="flex justify-between">
                 <h1><b>{'<SS/>'}</b></h1>
@@ -37,7 +38,7 @@ const MobileMenu = (props) => {
                 <div className="flex justify-between">
                     <p>Switch theme</p>
                     <button onClick={themeToggle}>
-                        <ModeChange />
+                        {theme === "dark" ? <Logo /> : <Moon />}
                     </button>
                 </div>
                 <button className="mt-4 w-full bg-black text-white px-4 py-1.5 rounded-lg dark:bg-white dark:text-slate-900 font-medium">

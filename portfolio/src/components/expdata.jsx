@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 let data = [
     {   
         h3: "Upwork",
@@ -27,8 +29,9 @@ const Expdata = () => {
         <>
         {
             data.map((props) => {
+                let key = uuidv4()
                 return(
-                    <div className="upwork-details flex justify-between mx-auto w-full bg-white rounded-xl p-5 drop-shadow-xl max-md:flex-col max-md:gap-10 dark:bg-slate-700">
+                    <div className="upwork-details flex justify-between mx-auto w-full bg-white rounded-xl p-5 drop-shadow-xl max-md:flex-col max-md:gap-10 dark:bg-slate-700" key={key}>
                         <h3 className="upicon h-14 max-md:h-8 max-md:w-30 text-3xl text-[#14A800]">{props.h3}</h3>
                         <div className="flex gap-3 max-md:flex-col-reverse">
                             <div className="updesc flex flex-col gap-10 md:pr-24">

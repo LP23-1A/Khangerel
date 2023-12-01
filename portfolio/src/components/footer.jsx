@@ -5,7 +5,6 @@ import Git from "./git";
 import Twitter from "./twitter";
 import Figma from "./figma";
 
-
 const Footer = () => {
     return (
     <div className="footer flex flex-col mx-auto max-w-screen-2xl gap-16 py-16 text-gray-700 text-2xl dark:text-slate-400">

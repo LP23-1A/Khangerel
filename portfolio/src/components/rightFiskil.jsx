@@ -1,3 +1,5 @@
+import { v4 as uuidv4} from "uuid"
+
 let data = [
     {
         h1: "Fiskil",
@@ -20,8 +22,9 @@ const Maping = () => {
         <div className="flex flex-wrap gap-3">
             {
                 data.map((props) => {
+                    let key = uuidv4()
                     return (
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex flex-wrap gap-3" key={key}>
                             <h1 className="dark:text-white">{props.h1}</h1>
                             <p className="dark:text-slate-300">{props.p}</p>
                             <button className="btn-1 bg-zinc-300 py-1 px-5 rounded-2xl gap-5 w-fit dark:bg-slate-600 dark:text-slate-200 hover:bg-violet-400 dark:hover:bg-violet-500">{props.tool}</button>
