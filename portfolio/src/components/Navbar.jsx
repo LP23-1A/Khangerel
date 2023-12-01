@@ -20,7 +20,6 @@ export default function Navbar() {
     if (theme === "light" || theme == "system") {
       setTheme("dark");
     }
-    {console.log(themeToggle);}
   };
   return (
     <header className="header flex justify-between max-w-screen-2xl px-[80px] mx-auto pt-5 items-center max-md:px-2">
