@@ -1,4 +1,4 @@
-
+import Count from '@/components/count';
 import data from '../data/product.json'
 
 
@@ -17,8 +17,8 @@ export default function Home() {
       <div className='flex'>
         <input className='w-5 h-5 border-indigo-500/75'></input>
         <p>Only show products in stock</p>
-        
       </div>
+      <Count />
     </div>
   )
 }
