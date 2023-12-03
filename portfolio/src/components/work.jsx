@@ -5,7 +5,7 @@ import Iconic from "@/components/iconic"
 const Work = () => {
   return (
     <div className="content--body flex flex-col text-gray-700 text-2xl mx-auto max-w-screen-2xl px-[80px] py-16 max-md:px-[20px] dark:dark">
-      <button className="btn flex bg-zinc-300 py-1 px-5 rounded-2xl mx-auto dark:bg-slate-500 dark:text-slate-200 hover:bg-violet-400 dark:hover:bg-violet-400">Work</button>
+      <button className="btn flex bg-zinc-300 py-1 px-5 rounded-2xl mx-auto dark:bg-slate-500 dark:text-slate-200 hover:bg-violet-400 dark:hover:bg-violet-400 hover:animate-bounce">Work</button>
       <p className="desc mx-auto py-7 dark:text-slate-300">Some of the noteworthy projects I have built:</p>
       <div className="containing flex flex-col mx-auto gap-16">
         <div className="work--right flex rounded-3xl justify-between bg-zinc-100 drop-shadow-2xl max-md:flex-col dark:bg-[#4B5563]">

@@ -9,7 +9,7 @@ const Footer = () => {
     return (
     <div className="footer flex flex-col mx-auto max-w-screen-2xl gap-16 py-16 text-gray-700 text-2xl dark:text-slate-400">
         <div className="foot--top flex flex-col">
-            <button className="btn flex bg-zinc-300 py-1 px-5 rounded-2xl mx-auto dark:bg-slate-500 dark:text-slate-200 hover:bg-violet-400 dark:hover:bg-violet-400">Get in touch</button>
+            <button className="btn flex bg-zinc-300 py-1 px-5 rounded-2xl mx-auto dark:bg-slate-500 dark:text-slate-200 hover:bg-violet-400 dark:hover:bg-violet-400 hover:animate-bounce">Get in touch</button>
             <p className="desc mx-auto py-7 w-3/6 text-center">What’s next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect.</p>
         </div>
         <div className="foot--mid flex flex-col mx-auto gap-5 max-md:text-base">
