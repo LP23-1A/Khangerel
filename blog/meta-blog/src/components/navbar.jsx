@@ -9,7 +9,7 @@ const Navbar = () => {
                 <li>Blog</li>
                 <li>Contact</li>
             </ul>
-            <input type="" />
+        
         </div>
     )
 }
