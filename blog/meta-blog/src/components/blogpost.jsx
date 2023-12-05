@@ -15,7 +15,7 @@ const AllPost = () => {
                     return (
                         <div className="flex flex-col gap-3"> 
                             <img className="rounded-lg bg-cover" src={props.url} alt="" />
-                            <button className="bg-indigo-50 text-indigo-500 w-fit p-1 px-3 rounded-xl text-white">{props.btn}</button>
+                            <button className="bg-indigo-50 text-indigo-500 w-fit p-1 px-3 rounded-xl text-indigo-500">{props.btn}</button>
                             <p className="text-xl font-bold">{props.desc}</p>
                             <p className="text-gray-500">{props.day}</p>
                         </div>
