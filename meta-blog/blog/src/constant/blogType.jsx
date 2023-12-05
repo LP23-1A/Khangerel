@@ -1,0 +1,1 @@
+export const Type = ['All', 'Design', 'Travel', 'Fashion', 'Technology', 'Branding']
