@@ -1,4 +1,5 @@
 import BlogAll from '@/components/BlogAll'
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import TrendingAll from "@/components/TrendingAll"
 import { Inter } from 'next/font/google'
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <TrendingAll />
       <BlogAll />
+      <Footer />
     </section>
   )
 }
