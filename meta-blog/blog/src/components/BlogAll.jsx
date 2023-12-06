@@ -2,6 +2,7 @@ import Blogpost from "@/components/Blogpost"
 import { Type } from "@/constant/blogType"
 import { v4 as uuidv4 } from "uuid"
 
+
 const BlogAll = () => {
     return (
         <div className="flex flex-col gap-7 my-[50px]">

@@ -9,13 +9,17 @@ const Blog = () => {
     const getData = async () => {
         let res = await axios.get(api);
         setData(res.data)
-        console.log(res);
+        console.log(res.data);
+    }
+    const handler = () => {    
+        getData("https://dev.to/api/articles") 
+        console.log('hello'); 
     }
     useEffect(() => {
         getData();
         }, [])
     return (
-        <div className="flex flex-wrap justify-between gap-5">
+        <div className="flex flex-wrap justify-between gap-5 h-fit">
             {
                 data.map((props) => {
                     let key = uuidv4()
