@@ -31,12 +31,12 @@ const Blog = () => {
     return (
         <div className='flex flex-col gap-11'>
             <div className="flex justify-between font-semibold">
-                <ul className='flex gap-5 hover:text-[#D4A373]'>
-                    <button onClick={reset}><li>All</li></button>
-                    <button onClick={() => filter('webdev')}><li>Webdev</li></button>
-                    <button onClick={() => filter('programming')}><li>Programming</li></button>
-                    <button onClick={() => filter('nextjs')}><li>Next.js</li></button>
-                    <button onClick={() => filter('fashion')}><li>Fashion</li></button>
+                <ul className='flex gap-5'>
+                    <button className='hover:text-[#D4A373]' onClick={reset}><li>All</li></button>
+                    <button className='hover:text-[#D4A373]' onClick={() => filter('webdev')}><li>Webdev</li></button>
+                    <button className='hover:text-[#D4A373]' onClick={() => filter('programming')}><li>Programming</li></button>
+                    <button className='hover:text-[#D4A373]' onClick={() => filter('nextjs')}><li>Next.js</li></button>
+                    <button className='hover:text-[#D4A373]' onClick={() => filter('fashion')}><li>Fashion</li></button>
                 </ul>
                 <button>View All</button>
             </div>

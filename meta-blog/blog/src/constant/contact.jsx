@@ -15,7 +15,7 @@ const ContactUs = () => {
             {
                 data.map((props) => {
                     return (
-                        <div className="border-3"> 
+                        <div className="border-3 border-green-400"> 
                             <h1>{props.h1}</h1>
                             <p>{props.info}</p>
                         </div>
