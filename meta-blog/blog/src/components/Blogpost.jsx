@@ -8,15 +8,13 @@ const Blog = () => {
     const [ data, setData ] = useState([]);
     const getData = async () => {
         let res = await axios.get(api);
-        setData(res.data)
-        console.log(res.data);
+        setData((prev) => [...prev, ...res.data]);
     }
     const handler = () => {    
-        getData("https://dev.to/api/articles") 
-        console.log('hello'); 
+        getData(api) 
     }
     useEffect(() => {
-        getData();
+        getData(api);
         }, [])
     return (
         <div className="flex flex-wrap justify-between gap-5 h-fit">
@@ -33,6 +31,7 @@ const Blog = () => {
                     )
                 })
             }
+            <button className="p-3 border-2 px-4 rounded-lg flex mx-auto mt-[40px] text-gray-500" onClick={handler}>Load More</button>
         </div>
     )
 }
