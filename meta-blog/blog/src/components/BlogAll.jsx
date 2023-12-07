@@ -1,25 +1,10 @@
 import Blogpost from "@/components/Blogpost"
-import { Type } from "@/constant/blogType"
-import { v4 as uuidv4 } from "uuid"
 
 
-const BlogAll = (  ) => {
+const BlogAll = () => {
     return (
         <div className="flex flex-col gap-7 my-[50px]">
             <h1 className="font-semibold text-2xl">All Blog Post</h1>
-            <div className="flex gap-5 justify-between font-semibold">
-                <div className="flex gap-5">
-                    {
-                        Type.map((props) => {
-                            let key = uuidv4()
-                            return (
-                                <button key={key}><li className="list-none hover:text-[#D4A373]">{props}</li></button>
-                            )
-                        })
-                    }
-                </div>
-                <button>View All</button>
-            </div>
             <Blogpost />
         </div>
     )
