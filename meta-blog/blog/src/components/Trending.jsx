@@ -14,7 +14,7 @@ const Trending = () => {
         getData()
     }, [])
     return (
-        <div className="flex justify-between flex-wrap">
+        <div className="flex justify-between flex-wrap gap-5">
             {
                 data.map((props) => {
                     return (

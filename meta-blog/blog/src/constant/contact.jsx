@@ -15,9 +15,9 @@ const ContactUs = () => {
             {
                 data.map((props) => {
                     return (
-                        <div className="border-3 border-green-400"> 
-                            <h1>{props.h1}</h1>
-                            <p>{props.info}</p>
+                        <div className="border-2 rounded-md p-4 flex flex-col gap-3 justify-center mx-auto"> 
+                            <h1 className="font-semibold text-xl">{props.h1}</h1>
+                            <p className="text-gray-500">{props.info}</p>
                         </div>
                     )
                 })
