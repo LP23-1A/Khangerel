@@ -14,10 +14,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <ul>
-                        <li>Home</li>
-                        <li>Blog</li>
-                        <li>Contact</li>
+                    <ul className="flex flex-col">
+                        <button><li>Home</li></button>
+                        <button><li>Blog</li></button>
+                        <button><li>Contact</li></button>
                     </ul>
                 </div>
                 <div>

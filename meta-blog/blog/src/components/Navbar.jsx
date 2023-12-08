@@ -8,7 +8,7 @@ const Navbar = () => {
         router.push('/contact')
     }
     const home = () => {
-        // router.push('/')
+        router.push('/error')
     }
     return (
         <div className="flex justify-between items-center my-5">
