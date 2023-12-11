@@ -1,18 +1,14 @@
 import { Carousel } from 'react-responsive-carousel';
 import image from '../../public/image.png'
-
+import React from "react";
 
 const Carousels = () => {
     return (
-        <div>
+        <div className="flex overflow-x-auto-hidden">
             <Carousel>
-                <div>
+                <div className='flex overflow-hidden overflow-scroll'>
                     <img src={image.src} />
-                </div>
-                <div>
                     <img src={image.src} />
-                </div>
-                <div>
                     <img src={image.src} />
                 </div>
             </Carousel>

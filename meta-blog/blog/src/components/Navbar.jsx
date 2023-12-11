@@ -8,14 +8,17 @@ const Navbar = () => {
         router.push('/contact')
     }
     const home = () => {
-        router.push('/error')
+        router.push('/home')
+    }
+    const blog = () => {
+        router.push('/blog')
     }
     return (
         <div className="flex justify-between items-center my-5">
             <Navicon />
             <ul className="flex gap-9">
                 <button onClick={home}><li className="text-gray-600">Home</li></button>
-                <button><li className="text-gray-600">Blog</li></button>
+                <button onClick={blog}><li className="text-gray-600">Blog</li></button>
                 <button onClick={contact}><li className="text-gray-600">Contact</li></button>
             </ul>
             <div className="flex">
