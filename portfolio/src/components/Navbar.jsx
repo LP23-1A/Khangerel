@@ -1,4 +1,3 @@
-
 import MENU from "./Menu";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
@@ -28,10 +27,10 @@ export default function Navbar() {
       </div>
       <div className="nav--left flex gap-7 items-center max-md:hidden">
         <ul className="list--items flex gap-7 border-r-2 pr-5">
-          <li className="hover:bg-purple-300 rounded-xl p-1 hover:translate-y-4 duration-500 hover:scale-125 transition ease-in-out">About</li>
-          <li className="hover:bg-purple-300 rounded-xl p-1 hover:translate-y-4 duration-500 hover:scale-125 transition ease-in-out">Work</li>
-          <li className="hover:bg-purple-300 rounded-xl p-1 hover:translate-y-4 duration-500 hover:scale-125 transition ease-in-out">Testimonials</li>
-          <li className="hover:bg-purple-300 rounded-xl p-1 hover:translate-y-4 duration-500 hover:scale-125 transition ease-in-out">Contact</li>
+          <button><li className="hover:bg-purple-300 rounded-xl p-1 hover:translate-y-4 duration-500 hover:scale-125 transition ease-in-out">About</li></button>
+          <button><li className="hover:bg-purple-300 rounded-xl p-1 hover:translate-y-4 duration-500 hover:scale-125 transition ease-in-out">Work</li></button>
+          <button><li className="hover:bg-purple-300 rounded-xl p-1 hover:translate-y-4 duration-500 hover:scale-125 transition ease-in-out">Testimonials</li></button>
+          <button><li className="hover:bg-purple-300 rounded-xl p-1 hover:translate-y-4 duration-500 hover:scale-125 transition ease-in-out">Contact</li></button>
         </ul>
         <button className="dark-mode" onClick={themeToggle}>
           {theme === "dark" ? <Logo /> : <Moon />}
