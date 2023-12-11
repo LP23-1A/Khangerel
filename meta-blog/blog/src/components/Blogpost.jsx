@@ -7,6 +7,7 @@ const api = "https://dev.to/api/articles"
 
 const Blog = () => {
     const [ data, setData ] = useState([]);
+    const [ add, setAdd ] = useState(9);
     const initData = useRef([])
     const router = useRouter()
     const getData = async () => {
@@ -19,7 +20,7 @@ const Blog = () => {
         setData(() => initData.current.filter((props) => props.tags === name))
     }
     const handler = () => {    
-        getData(api) 
+        setAdd((add) => add + 3) 
     }
     useEffect(() => {
         getData(api);
@@ -28,7 +29,7 @@ const Blog = () => {
         <div className='flex flex-col gap-10'>
             <div className="flex flex-wrap justify-between gap-5 h-fit">
                 {
-                    data.map((props) => {
+                    data.slice(0, add).map((props) => {
                         let key = uuidv4()
                         return (
                             <div className="flex flex-col gap-7 w-[410px] h-[500px] rounded-xl p-4 border-2" key={key}>
