@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useRouter } from 'next/router';
 import { useState, useEffect, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid'
 
@@ -9,15 +8,11 @@ const Blog = () => {
     const [ data, setData ] = useState([]);
     const [ add, setAdd ] = useState(9);
     const initData = useRef([])
-    const router = useRouter()
     const getData = async () => {
         let res = await axios.get(api);
         initData.current = res.data;
         setData(res.data)
         setData((prev) => [...prev, ...res.data]);
-    }
-    const filter = (name) => {
-        setData(() => initData.current.filter((props) => props.tags === name))
     }
     const handler = () => {    
         setAdd((add) => add + 3) 

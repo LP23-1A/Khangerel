@@ -16,7 +16,7 @@ const Trending = () => {
     return (
         <div className="flex justify-between flex-wrap gap-5">
             {
-                data.map((props) => {
+                data.slice(0, 4).map((props) => {
                     return (
                         <div className="w-[300px] h-80 p-4 rounded-xl text-white flex items-end bg-cover" style={{ backgroundImage: `url(${props.social_image})`}}>
                             <div className="flex flex-col gap-4">

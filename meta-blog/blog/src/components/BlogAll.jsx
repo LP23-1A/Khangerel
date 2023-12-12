@@ -9,6 +9,9 @@ const BlogAll = () => {
     const view = () => {
         router.push('/blog')
     };
+    const filter = () => {
+        console.log('hello world');
+    }
     return (
         <div className="flex flex-col gap-9 my-[50px] max-w-screen-xl mx-auto">
             <h1 className="font-semibold text-2xl">All Blog Post</h1>
