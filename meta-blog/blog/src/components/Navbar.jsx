@@ -14,7 +14,7 @@ const Navbar = () => {
         router.push('/blog')
     }
     return (
-        <div className="flex justify-between items-center my-5">
+        <div className="flex justify-between items-center mt-7">
             <Navicon />
             <ul className="flex gap-9">
                 <button className="hover:text-[#D4A373] hover:underline" onClick={home}><li className="text-gray-600">Home</li></button>
@@ -22,7 +22,7 @@ const Navbar = () => {
                 <button className="hover:text-[#D4A373] hover:underline" onClick={contact}><li className="text-gray-600">Contact</li></button>
             </ul>
             <div className="flex">
-                <input type="search" name="" id="" placeholder="   search" className="border-2 rounded-md bg-gray-100 p-1"/>
+                <input type="search" name="" id="" placeholder=" search" className="border-2 rounded-md bg-gray-100 p-1"/>
             </div>
         </div>
     )
