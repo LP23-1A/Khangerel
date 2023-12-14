@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import Pro from "@/images/pro"
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -26,9 +25,9 @@ const BlogDetail = () => {
             {detail && (
               <div className="flex flex-col justify-between max-w-[900px] my-24 mx-auto text-[#3B3C4A] text-xl gap-8">
                   <h1 className="text-4xl font-bold text-black">{detail.description}</h1>
-                  <div className="flex gap-3">
-                      <div className="flex gap-2">
-                          <Pro />
+                  <div className="flex gap-3 items-center">
+                      <div className="flex gap-3 items-center">
+                          <img className="rounded-[50%] h-11" src={detail.user.profile_image} alt="" />
                           <p>{detail.user.name}</p>
                       </div>
                       <div>

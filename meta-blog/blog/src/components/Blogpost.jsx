@@ -37,7 +37,7 @@ const Blog = () => {
         }
     return (
         <div className='flex flex-col gap-10'>
-            <div className="flex justify-between font-semibold">
+            <div className="flex justify-between font-semibold max-md:hidden">
                 <ul className='flex gap-5'>
                     <button className='hover:text-[#D4A373]' onClick={reset}><li>All</li></button>
                     <button className='hover:text-[#D4A373]' onClick={() => filter('webdev')}><li>Webdev</li></button>
@@ -47,21 +47,24 @@ const Blog = () => {
                 </ul>
                 <button onClick={view}>View All</button>
             </div>
-            <div className="flex flex-wrap justify-between gap-5 h-fit">
+            <div className="flex flex-wrap justify-between gap-5 h-fit max-md:justify-center">
                 {
                     data.slice(0, add).map((props) => {
                         let key = uuidv4()
                         return (
                             <Link href={`/blog/${props.id}`}>
-                                <div className="flex flex-col gap-7 w-[410px] h-[500px] rounded-xl p-4 border-2" key={key}>
+                                <div className="flex flex-col gap-7 w-[410px] h-[500px] rounded-xl p-4 border-2 max-sm:w-[300px] max-md:w-[500px]" key={key}>
                                     <img className="bg-cover rounded-md h-full" src={props.social_image} alt="" />
-                                    <div className='flex gap-3'>
+                                    <div className='flex gap-3 flex-wrap'>
                                         {props.tag_list.map((el) => (
-                                            <button className="w-fit p-1 px-2 rounded-lg bg-indigo-100 text-indigo-500">{el}</button>
-                                    ))}
+                                                <button className="w-fit p-1 px-2 rounded-lg bg-indigo-100 text-indigo-500">{el}</button>
+                                        ))}
                                     </div>
                                     <h1 className="text-xl font-semibold">{props.description}</h1>
-                                    <p className="text-gray-400">{props.published_timestamp}</p>
+                                    <div className='flex items-center gap-4'>
+                                        <img className="rounded-[50%] h-11" src={props.user.profile_image} alt="" />  
+                                        <p className="text-gray-400">{props.published_timestamp}</p>
+                                    </div>
                                 </div>
                             </Link>
                         )

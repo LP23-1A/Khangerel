@@ -19,7 +19,7 @@ const Carousel = () => {
         setActiveIndex((activeIndex) => activeIndex - 1);
     }
     return (
-        <div className="mt-[100px]">
+        <div className="mt-[100px] max-md:hidden">
             {CarouselData.length != 0 && (
             <div className="w-full relative text-black rounded-lg">
                 <img src={ CarouselData[activeIndex].url } className="w-full max-h-[650px] rounded-lg" />

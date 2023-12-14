@@ -2,7 +2,7 @@ const api = "https://dev.to/api/articles?username=gereltuyamz"
 
 const All = () => {
     return (
-        <div className="flex flex-col gap-7 my-[50px] max-w-screen-xl mx-auto">
+    <div className="flex flex-col gap-7 my-[50px] max-w-screen-xl mx-auto">
         <h1 className="font-semibold text-2xl">All Blog Post</h1>
         {
             api.map((props) => {

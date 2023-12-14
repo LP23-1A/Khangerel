@@ -14,7 +14,7 @@ const Trending = () => {
         getData()
     }, [])
     return (
-        <div className="flex justify-between flex-wrap gap-5">
+        <div className="flex justify-between flex-wrap gap-5 max-md:justify-center">
             {
                 data.slice(0, 4).map((props) => {
                     return (

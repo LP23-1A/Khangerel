@@ -9,7 +9,7 @@ export const CarouselData = [
     {
         id: 2,
         url: 'https://s3-alpha-sig.figma.com/img/3abf/26dd/585632b9d05dcfd0daffacedd55842f5?Expires=1703462400&Signature=fNfESgWwIdh25JxYRQriwmr5ky-fz8Yy9bgK23BZp8eKOwJrMHOAz7gywzrVs89Xgx3QrA2LQx9K6E3HLno0C8MHhHKp32E~M6UD6-~O9u-3m1oguDaRgXc0cgeL2KlAC1u7mpV09UAyTBcIoEmYiYJ4Y~D2vPn56WyA~QdGPBIaEDhi3TrkFoqQ2iDEX5BIeOg9ah2sB0GyGbM6U1Ttd~96irA0Qq-aO0dH-nSdHtASPMh22rVub7yNx8WasUjFmZYJ0MshQM0ec~GjBJUPvZ112sWKb13mhMfJRGVqUYyZmCCtB5PO00Xit~nTT0D1bCL90mEIOrk8kPHHvrCj6g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
-        btn: 'Tecgy',
+        btn: 'beach',
         desc: 'Grid system for better Design User Interface',
         day: 'August 20, 2022'
     },
