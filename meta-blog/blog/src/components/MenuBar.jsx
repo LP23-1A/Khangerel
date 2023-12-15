@@ -1,5 +1,4 @@
 import { useRouter } from "next/router"
-import Cancel from "@/images/cancel"
 const Menu = () => {
     const router = useRouter()
     const contact = () => { 
