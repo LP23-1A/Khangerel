@@ -1,4 +1,5 @@
 import { useRouter } from "next/router"
+import Cancel from "@/images/cancel"
 const Menu = () => {
     const router = useRouter()
     const contact = () => { 
@@ -12,7 +13,6 @@ const Menu = () => {
     }
     return (
         <div className="flex flex-col w-[60%] bg-gray-100 h-full justify-start">
-            <i class="fa-sharp fa-solid fa-xmark"></i>
             <ul className="flex flex-col gap-9">
                 <button className="hover:text-[#D4A373] hover:underline" onClick={home}><li className="text-gray-600">Home</li></button>
                 <button className="hover:text-[#D4A373] hover:underline" onClick={blog}><li className="text-gray-600">Blog</li></button>

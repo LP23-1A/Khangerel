@@ -1,7 +1,8 @@
-import OnClick from "@/images/onclick";
+import MenuOne from "@/images/onclick";
 import { useRouter } from "next/router";
 import { useState } from "react"
 import Menu from "./MenuBar";
+import Cancel from "@/images/cancel";
 
 const { default: Navicon } = require("@/images/navicon")
 
@@ -31,7 +32,9 @@ const Navbar = () => {
             <div className="flex max-md:hidden">
                 <input type="search" name="" id="" placeholder=" search" className="border-2 rounded-md bg-gray-100 p-1"/>
             </div>
-            <button className="md:hidden" onClick={asideMenu}><OnClick /></button>
+            <button className="md:hidden" onClick={asideMenu}>
+                {isOpen === false ? <MenuOne /> : <Cancel />}
+            </button>
             {isOpen && <Menu setIsOpen={setIsOpen} />}
         </div>
     )

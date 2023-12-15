@@ -23,7 +23,7 @@ const BlogDetail = () => {
         <div className='max-w-screen-xl mx-auto'>
             <Navbar />
             {detail && (
-              <div className="flex flex-col justify-between max-w-[900px] my-24 mx-auto text-[#3B3C4A] text-xl gap-8">
+              <div className="flex flex-col justify-between max-w-[900px] my-24 mx-auto text-[#3B3C4A] text-xl gap-8 max-md:mx-5">
                   <h1 className="text-4xl font-bold text-black">{detail.description}</h1>
                   <div className="flex gap-3 items-center">
                       <div className="flex gap-3 items-center">
