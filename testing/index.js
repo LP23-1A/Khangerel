@@ -1,7 +1,8 @@
 import express from "express";
 import bp from "body-parser";
 import mongoose from "mongoose";
-import Url from "./schema/Url.js"
+import Url from "./schema/Url.js";
+import { nanoid } from "nanoid";
 
 const app = express();
 const PORT = 8000;
@@ -11,42 +12,42 @@ app.use(bp.json());
 
 
 
-app.get("/", async (req, res) => {
+app.get("/", async (_, res) => {
   const ress = await Url.find();
 
-  res.send({ success: true, ress }).end();
+  res.send({ ress }).end();
 });
 
-// app.get("/:id", (req, res) => {
-//   const id = req.params.id;
-//   const filteredData = users.filter((user) => user.id === parseInt(id));
+app.get("/:url", async (req, res) => {
+  const { url } = req.params;
+  const ress = await Url.findOne({
+    shortUrl: url
+  })
 
-//   res.send({ success: true, users: filteredData }).end();
-// });
+  res.redirect(ress.longUrl)
+});
 
 app.post("/", async (req, res) => {
-  const newUrl = await Url.create(req.body);
+  const { url } = req.body;
 
-  res.send({ success: true, urls:newUrl }).end();
+  const newUrl = await Url.create( {
+    longUrl: url,
+    shortUrl: nanoid(10)
+  } );
+
+  res.send({ success: true, urls: newUrl }).end();
 });
-// app.put("/:id", (req, res) => {
-//   const id = req.params.id;
-//   users.map((user) => {
-//     if (user.id === parseInt(id)) {
-//       console.log(id);
-//       user.name = req.body.name;
-//     }
-//   });
-//   res.send({ success: true, users: users }).end();
-// });
-// app.delete("/:id", (req, res) => {
-//   const id = req.params.id;
-//   const deletedUserId = users.findIndex((user) => user.id === parseInt(id));
-//   if (deletedUserId !== -1) {
-//     users.splice(deletedUserId, 1);
-//   }
-//   res.send({ success: true, users: users }).end();
-// });
+
+app.delete("/:url", async (req, res) => {
+  const { url } = req.params;
+
+  const { acknowledged, deletedCount } = await Url.deleteOne({
+    shortUrl: url,
+  });
+  res.send({ success: acknowledged, removedCount: deletedCount }).end();
+});
+
+
 app.listen(PORT, async () => {
   try {
     await mongoose.connect(MONGODB_URI)
